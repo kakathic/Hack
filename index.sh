@@ -10,7 +10,7 @@ cat << HiH | sed2
 <option type="default" auto-off="true">Cập nhật Config.yaml</option>
 <handler>
 # Start code
-Taive "https://raw.githubusercontent.com/kakathic/kakathic/Vip/Vpn.yaml" "$PHOME/config.yaml" "-#kLJ --connect-timeout 5" "text"
+Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" "$PHOME/config.yaml" "-#kLJ --connect-timeout 5" "text"
 # End code
 </handler></page></group>
 HiH
