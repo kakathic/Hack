@@ -4,6 +4,8 @@
 PHOME="$TOME/Module/Hack-Proxy"
 CLASH=$PHOME/Clash
 
+mkdir -p $PHOME/run
+
 if [ ! -e /data/adb/service.d/Hack-Proxy.sh ];then
 mkdir -p /data/adb/service.d
 cp -rf $PHOME/Hack-Proxy.sh /data/adb/service.d 2>/dev/null
