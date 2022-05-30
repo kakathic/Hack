@@ -1,5 +1,3 @@
-
-
 # Path
 PHOME="$TOME/Module/Hack-Proxy"
 CLASH=$PHOME/Clash
