@@ -23,7 +23,7 @@ cat << HiH | sed2
 <summary>$(cat $PHOME/run/error)</summary>
 <get>test -e $PHOME/run/clash.pid && echo 1 || echo 0</get>
 <set>
-$PHOME/scripts/service.sh 2>/dev/null
+$PHOME/scripts/service.sh
 </set>
 </switch>
 </group>
