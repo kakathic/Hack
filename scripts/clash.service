@@ -16,7 +16,7 @@ mkdir -p /dev/net
 [ ! -L /dev/net/tun ] && ln -s /dev/tun /dev/net/tun
 
 start_clash() {
-    rm ${CFM_logs_file}
+    rm ${CFM_logs_file} 2>/dev/null
     local pid=`cat ${Clash_pid_file} 2> /dev/null`
     if (cat /proc/${pid}/cmdline | grep -q ${Clash_bin_name}) ; then
         echo "Info: Hạt nhân Clash đã được khởi động, lần này sẽ không bắt đầu." >> ${CFM_logs_file}
@@ -55,7 +55,7 @@ start_clash() {
 
 stop_clash() {
     kill -15 `cat ${Clash_pid_file}`
-    rm ${CFM_logs_file}
+    rm ${CFM_logs_file} 2>/dev/null
     rm -f ${Clash_pid_file}
     iptables -D FORWARD -o ${tun_device} -j ACCEPT	
 	iptables -D FORWARD -i ${tun_device} -j ACCEPT
