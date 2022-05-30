@@ -1,5 +1,5 @@
 # Path
-PHOME="$TOME/Module/HackProxy"
+PHOME="$TOME/Module/Hack-Proxy"
 
 # Command
 cat << HiH | sed2

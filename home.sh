@@ -1,12 +1,12 @@
 
 
 # Path
-PHOME="$TOME/Module/HackProxy"
+PHOME="$TOME/Module/Hack-Proxy"
 CLASH=$PHOME/Clash
 
-if [ ! -e /data/adb/service.d/HackProxy.sh ];then
+if [ ! -e /data/adb/service.d/Hack-Proxy.sh ];then
 mkdir -p /data/adb/service.d
-cp -rf $PHOME/HackProxy.sh /data/adb/service.d 2>/dev/null
+cp -rf $PHOME/Hack-Proxy.sh /data/adb/service.d 2>/dev/null
 fi
 
 cat << HiH | sed2
