@@ -39,9 +39,9 @@ $PHOME/scripts/service.sh
 <action shell="hidden">
 <title>Thêm Sever</title>
 <desc>Nhập đường dẫn File, URL để thêm vào list</desc>
-<param name="Tensv" value-sh="Xset Tensv" type="text" placeholder="Tên Sever" required="required" />
-<param name="Durl" type="text" desc="£Hoặc" placeholder="http://test.com"/>
-<param name="Ffile" type="file" editable="true" suffix="yaml"/>
+<param name="Tensv" value-sh="Xset Tensv" type="text" desc="Nhập Url hoặc Tệp tin nếu nhập cả hai nó chỉ nhận Url" placeholder="Tên Sever" required="required" />
+<param name="Durl" type="text" title="Url" placeholder="http://test.com"/>
+<param name="Ffile" type="file" title="Tệp tin" editable="true" suffix="yaml"/>
 <set>
 if [ €Durl ];then
 echo "
