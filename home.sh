@@ -10,26 +10,21 @@ fi
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
 <items>
-<text/>
-<text>
-<summary>$($CLASH -v)</summary>
-</text>
-
 
 <group>
-<switch shell="hidden" reload="true" id="123">
+<switch shell="hidden" reload="true" id="$RANDOM">
 <title>Hack Proxy</title>
 <desc>$(cat $PHOME/run/run.log)</desc>
-<summary>$(cat $PHOME/run/error)</summary>
 <get>test -e $PHOME/run/clash.pid && echo 1 || echo 0</get>
 <set>
 $PHOME/scripts/service.sh
 </set>
 </switch>
+
 </group>
 
 <group>
-<page link="http://127.0.0.1:9090/ui">
+<page html="http://127.0.0.1:9090/ui" id="$RANDOM">
 <title>Web Ui</title>
 <desc>Lựa chọn các sever và các cài đặt khác</desc>
 </page>
@@ -86,14 +81,12 @@ sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' $PHOME/config.yaml
 </action>
 </group>
 
-
 <group>
 <page html="http://fastvpn-ph.speedtestcustom.com">
 <title>Speed Test</title>
 <desc>Kiểm tra tốc độ tải xuống, lên, ping mạng</desc>
 </page>
 </group>
-
 
 <group>
 <page html="https://checkip.vip">
@@ -102,6 +95,8 @@ sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' $PHOME/config.yaml
 </page>
 </group>
 
+<text/>
+<text title="Nhật ký£" desc-sh="$CLASH -v;echo; cat $PHOME/run/kernel.log;echo; cat $PHOME/run/error"/>
 
 </items>
 HiH
