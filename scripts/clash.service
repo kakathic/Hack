@@ -2,7 +2,7 @@
 
 magisk_busybox="/data/adb/magisk/busybox"
 tun_device="utun"
-Clash_data_dir="/data/data/com.kakathic.shells/files/TOME/Module/HackProxy"
+Clash_data_dir="/data/data/com.kakathic.shells/files/TOME/Module/Hack-Proxy"
 Clash_bin_name="Clash"
 Clash_bin_path="${Clash_data_dir}/${Clash_bin_name}"
 Clash_run_path="${Clash_data_dir}/run"
