@@ -1,6 +1,6 @@
 allow-lan: true
 ipv6: false
-udp: true
+udp: false
 mode: Rule
 log-level: info
 ipv6: false
