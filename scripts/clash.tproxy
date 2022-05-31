@@ -1,7 +1,9 @@
 #!/bin/sh
 id="2022"
-Clash_data_dir="/data/data/com.kakathic.shells/files/TOME/Module/Hack-Proxy"
-Clash_config_file="${Clash_data_dir}/config.yaml"
+Clash_data_dir="$TOME/Module/Hack-Proxy"
+Zhex "${Clash_data_dir}/config.yaml" > "$TEMP_DIR/config.yaml"
+Clash_config_file="$TEMP_DIR/config.yaml"
+cp -rf "${Clash_data_dir}/Dashboard" "$TEMP_DIR"
 dns_port=`grep "listen" ${Clash_config_file} | awk -F ':' '{print $3}'`
 tproxy_port=`grep "tproxy-port" ${Clash_config_file} | awk -F ':' '{print $2}'`
 
