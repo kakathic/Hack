@@ -1,33 +1,41 @@
-mixed-port: 8888
+
 allow-lan: true
-mode: rule
-log-level: silent
 ipv6: false
-udp: true
-secret: 
-external-controller: 0.0.0.0:9090
+mode: Rule
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
 external-ui: Dashboard
+tcp-concurrent: true
+unified-delay: true
+geodata-mode: true
+skip-cert-verify: true
+enable-process: true
+sniffer: {enable: true, sniffing: ['tls', 'http']}
+profile: {store-selected: true, store-fake-ip: true}
+
 tun:
-    enable: true
-    stack: system
-    device: Meta
-    dns-hijack:
-        - 'any:53'
-    auto-route: true
-    auto-detect-interface: true
+  enable: true
+  device: Meta
+  stack: system
+  dns-hijack: ['any:53']
+  auto-route: true
+  auto-detect-interface: true
 dns:
-    enable: true
-    ipv6: false
-    listen: 0.0.0.0:1053
-    enhanced-mode: fake-ip
-    default-nameserver:
+  enable: true
+  ipv6: false
+  use-hosts: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  default-nameserver:
         - '8.8.8.8'
         - '1.1.1.1'
-    nameserver:
+  nameserver:
         - '8.8.8.8'
         - '1.1.1.1'
         - 'https://dns.google/dns-query'
         - 'https://cloudflare-dns.com/dns-query'
+
 rule-providers:
     anti-ad:
         behavior: "domain"

@@ -96,7 +96,7 @@ sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' $PHOME/config.yaml
 </group>
 
 <text/>
-<text title="Nhật ký£" desc-sh="$CLASH -v;echo; cat $PHOME/run/kernel.log;echo; cat $PHOME/run/error"/>
+<text title="Nhật ký£" desc-sh="$CLASH -v;echo; cat $PHOME/run/error;echo; cat $PHOME/run/kernel.log"/>
 
 </items>
 HiH
