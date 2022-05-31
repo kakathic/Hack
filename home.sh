@@ -53,7 +53,7 @@ echo "
     €Tensv:
         type: http
         url: "€Durl"
-        path: ./run/€(date +"%Y_%m_%d_%H")_€RANDOM.yaml
+        path: ./run/€(date +"%H_%M_%S")_€RANDOM.yaml
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
