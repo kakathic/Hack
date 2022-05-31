@@ -11,6 +11,10 @@ cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
 <items>
 
+<text/>
+<text title="Phiên bản£" desc-sh="$CLASH -v;echo; cat $PHOME/run/error;echo"/>
+
+
 <group>
 <switch shell="hidden" reload="true" id="$RANDOM">
 <title>Hack Proxy</title>
@@ -20,14 +24,18 @@ cat << HiH | sed2
 $PHOME/scripts/service.sh
 </set>
 </switch>
-
 </group>
 
+
 <group>
-<page html="http://127.0.0.1:9090/ui" id="$RANDOM">
-<title>Web Ui</title>
-<desc>Lựa chọn các sever và các cài đặt khác</desc>
-</page>
+<action shell="hidden" reload="true" title="Mode" desc="Chế độ đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2)" >
+<param name="Luachokhb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct;"/>
+<set>
+Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
+sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 mode:)/mode: €Luachokhb/g" "$TEMP_DIR/kkc.yaml"
+Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
+</set>
+</action>
 </group>
 
 <group>
@@ -39,6 +47,7 @@ $PHOME/scripts/service.sh
 <param name="Ffile" type="file" title="Tệp tin" editable="true" suffix="yaml"/>
 <set>
 if [ €Durl ];then
+Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
 echo "
 #€Tensv
     €Tensv:
@@ -50,9 +59,11 @@ echo "
             url: http://www.gstatic.com/generate_204
             interval: 600
 ##€Tensv
-" >> $PHOME/config.yaml
+" >> "$TEMP_DIR/kkc.yaml"
+
 else
-KKFi="€(date +"%Y_%m_%d_%H")_€RANDOM.yaml"
+KKFi="€(date +"%H_%M_%S")_€RANDOM.yaml"
+Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
 cp -rf "€Ffile" "$PHOME/run/€KKFi"
 echo "
 #€Tensv
@@ -64,22 +75,36 @@ echo "
             url: http://www.gstatic.com/generate_204
             interval: 600
 ##€Tensv
-" >> $PHOME/config.yaml
+" >> "$TEMP_DIR/kkc.yaml"
 fi
 
-sed -i "s/#Themv/          - €Tensv\n#Themv/g" $PHOME/config.yaml
+sed -i "s/#Themv/          - €Tensv\n#Themv/g" "$TEMP_DIR/kkc.yaml"
+Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </set>
 </action>
+
 </group>
 
 <group>
 <action shell="hidden" title="Xoá Sever" desc="Lựa chọn sever để xóa bỏ khỏi config.yaml" >
-<param name="Xsv" label="Lựa chọn" option-sh="cat $PHOME/config.yaml | grep '##' | sed 's/##//g'"/>
+<param name="Xsv" label="Lựa chọn" option-sh="Zhex $PHOME/config.yaml | grep '##' | sed 's/##//g'"/>
 <set>
-sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' $PHOME/config.yaml
+Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
+sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' "$TEMP_DIR/kkc.yaml"
+Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </set>
 </action>
 </group>
+
+
+
+<group>
+<page html="http://127.0.0.1:9090/ui">
+<title>Web Ui</title>
+<desc>Lựa chọn các sever và các cài đặt khác</desc>
+</page>
+</group>
+
 
 <group>
 <page html="http://fastvpn-ph.speedtestcustom.com">
@@ -94,9 +119,6 @@ sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' $PHOME/config.yaml
 <desc>Xem ip vị trí của bạn đang ở đâu</desc>
 </page>
 </group>
-
-<text/>
-<text title="Nhật ký£" desc-sh="$CLASH -v;echo; cat $PHOME/run/error;echo; cat $PHOME/run/kernel.log"/>
 
 </items>
 HiH
