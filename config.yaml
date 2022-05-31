@@ -1,7 +1,7 @@
 allow-lan: true
 ipv6: false
 udp: false
-mode: Global
+mode: Rule
 log-level: info
 ipv6: false
 external-controller: 127.0.0.1:9090
@@ -88,8 +88,7 @@ proxy-providers:
             enable: true
             url: http://www.gstatic.com/generate_204
             interval: 600
-##Fuzzy PN  
-
+##Fuzzy PN
 #Yuna
     Yuna:
         type: http
