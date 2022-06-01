@@ -29,18 +29,6 @@ $PHOME/scripts/service.sh
 </group>
 
 
-
-<group>
-<action shell="hidden" reload="true" title="Mode" desc="Chế độ đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2)" >
-<param name="Luachokhb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct;"/>
-<set>
-Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
-sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 mode:)/mode: €Luachokhb/g" "$TEMP_DIR/kkc.yaml"
-Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
-</set>
-</action>
-</group>
-
 <group>
 <action shell="hidden">
 <title>Thêm Sever</title>
@@ -86,9 +74,6 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </set>
 </action>
 
-</group>
-
-<group>
 <action shell="hidden" title="Xoá Sever" desc="Lựa chọn sever để xóa bỏ khỏi config.yaml" >
 <param name="Xsv" label="Lựa chọn" option-sh="Zhex $PHOME/config.yaml | grep '##' | sed 's/##//g'"/>
 <set>
@@ -100,6 +85,16 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </group>
 
 <group>
+<action shell="hidden" reload="true" title="Mode" desc="Chế độ đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2)" >
+<param name="Luachokhb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct;"/>
+<set>
+Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
+sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 mode:)/mode: €Luachokhb/g" "$TEMP_DIR/kkc.yaml"
+Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
+</set>
+</action>
+
+
 <action shell="hidden" reload="true" title="Hệ thống" desc="Hệ thống đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 stack: | cut -d : -f2)" >
 <param name="ksjdbdjdj" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 stack: | cut -d : -f2" option-sh="echo system; echo gvisor;"/>
 <set>
@@ -108,9 +103,7 @@ sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 stack:)/stack: €ksjdbdjdj/
 Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </set>
 </action>
-</group>
 
-<group>
 <action shell="hidden" reload="true" title="Giao diện Web" desc="Chủ đề đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2)" >
 <param name="kxkdbrb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2" option-sh="echo Dashboard; echo Yacd;"/>
 <set>
@@ -135,9 +128,7 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 <title>Speed Test</title>
 <desc>Kiểm tra tốc độ tải xuống, lên, ping mạng</desc>
 </page>
-</group>
 
-<group>
 <page html="https://checkip.vip">
 <title>Kiểm tra ip</title>
 <desc>Xem ip vị trí của bạn đang ở đâu</desc>
