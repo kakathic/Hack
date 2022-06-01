@@ -9,7 +9,7 @@ cat << HiH | sed2
 <desc>Giúp máy bạn có mạng, thay đổi ip proxy</desc>
 <option type="refresh" icon="$TOME/usr/Tool/Loading.png" >$lammoi</option>
 <option type="default" auto-off="true">Cập nhật Config.yaml</option>
-<option type="default" id="kk2" auto-off="true">Cập nhật toàn bộ</option>
+<option type="default" id="kk2" reload="true" auto-off="true">Cập nhật toàn bộ</option>
 <option type="default" id="kk" >Nhật ký</option>
 <handler>
 # Start code
