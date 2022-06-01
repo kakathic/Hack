@@ -9,7 +9,7 @@ fi
 
 if [ ! -e $TEMP_DIR/yacd-gh-pages ];then
 Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
-unzip -o "$TEMP_DIR/Testvg.zip" -d "$TEMP_DIR"
+unzip -qo "$TEMP_DIR/Testvg.zip" -d "$TEMP_DIR"
 rm -fr "$TEMP_DIR/Testvg.zip"
 fi
 
