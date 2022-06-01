@@ -131,7 +131,7 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 <desc>Kiểm tra tốc độ tải xuống, lên, ping mạng</desc>
 </page>
 
-<page html="https://checkip.vip">
+<page html="https://diachiip.com">
 <title>Kiểm tra ip</title>
 <desc>Xem ip vị trí của bạn đang ở đâu</desc>
 </page>
