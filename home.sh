@@ -9,7 +9,7 @@ fi
 
 [ -e $TEMP_DIR/Dashboard ] || mv -f $PHOME/Dashboard $TEMP_DIR
 [ -e $TEMP_DIR/Yacd ] || mv -f $PHOME/Yacd $TEMP_DIR
-[ -e $TEMP_DIR/Clash ] || cp -rf $PHOME/Clash $TEMP_DIR
+[ -e $TEMP_DIR/Clash ] || mv -f $PHOME/Clash $TEMP_DIR
 
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
