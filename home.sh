@@ -59,7 +59,7 @@ echo "
         path: ./run/€(date +"%H_%M_%S")_€RANDOM.yaml
         health-check:
             enable: true
-            url: http://google.com
+            url: http://www.gstatic.com/generate_204
             interval: 600
 ##€Tensv
 " >> "$TEMP_DIR/kkc.yaml"
@@ -75,7 +75,7 @@ echo "
         path: ./run/€KKFi
         health-check:
             enable: true
-            url: http://google.com
+            url: http://www.gstatic.com/generate_204
             interval: 600
 ##€Tensv
 " >> "$TEMP_DIR/kkc.yaml"
@@ -99,6 +99,16 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </action>
 </group>
 
+<group>
+<action shell="hidden" reload="true" title="Hệ thống" desc="Hệ thống đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 stack: | cut -d : -f2)" >
+<param name="ksjdbdjdj" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 stack: | cut -d : -f2" option-sh="echo system; echo gvisor;"/>
+<set>
+Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
+sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 stack:)/stack: €ksjdbdjdj/g" "$TEMP_DIR/kkc.yaml"
+Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
+</set>
+</action>
+</group>
 
 <group>
 <action shell="hidden" reload="true" title="Giao diện Web" desc="Chủ đề đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2)" >
