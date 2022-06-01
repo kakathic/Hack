@@ -14,7 +14,7 @@ cat << HiH | sed2
 <items>
 
 <text/>
-<text title="Phiên bản£" desc-sh="$CLASH -v;echo; cat $PHOME/run/error;echo"/>
+<text title="Phiên bản" desc-sh="$CLASH -v;echo; cat $PHOME/run/error;echo"/>
 
 
 <group>
