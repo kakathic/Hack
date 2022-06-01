@@ -7,8 +7,12 @@ mkdir -p /data/adb/service.d
 cp -rf $PHOME/Hack-Proxy.sh /data/adb/service.d 2>/dev/null
 fi
 
-[ -e $TEMP_DIR/Dashboard ] || mv -f $PHOME/Dashboard $TEMP_DIR
-[ -e $TEMP_DIR/Yacd ] || mv -f $PHOME/Yacd $TEMP_DIR
+if [ -e $TEMP_DIR/yacd-gh-pages ];then
+Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
+unzip -o "$TEMP_DIR/Testvg.zip" -d "$TEMP_DIR"
+rm -fr "$TEMP_DIR/Testvg.zip"
+fi
+
 [ -e $PHOME/Clash ] && mv -f $PHOME/Clash $TEMP_DIR/Clash
 
 cat << HiH | sed2
@@ -106,14 +110,6 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </set>
 </action>
 
-<action shell="hidden" reload="true" title="Giao diện Web" desc="Chủ đề đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2)" >
-<param name="kxkdbrb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2" option-sh="echo Dashboard; echo Yacd;"/>
-<set>
-Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
-sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 external-ui:)/external-ui: €kxkdbrb/g" "$TEMP_DIR/kkc.yaml"
-Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
-</set>
-</action>
 </group>
 
 
