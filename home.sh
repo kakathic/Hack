@@ -5,9 +5,10 @@ CLASH=$PHOME/Clash
 if [ ! -e /data/adb/service.d/Hack-Proxy.sh ];then
 mkdir -p /data/adb/service.d
 cp -rf $PHOME/Hack-Proxy.sh /data/adb/service.d 2>/dev/null
-mv -f $PHOME/Dashboard $TEMP_DIR
-mv -f $PHOME/Yacd $TEMP_DIR
 fi
+
+[ -e $TEMP_DIR/Dashboard ] || mv -f $PHOME/Dashboard $TEMP_DIR
+[ -e $TEMP_DIR/Yacd ] || mv -f $PHOME/Yacd $TEMP_DIR
 
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
