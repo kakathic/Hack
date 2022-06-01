@@ -123,7 +123,7 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 
 
 <group>
-<page html="http://127.0.0.1:9090/ui">
+<page html="http://127.0.0.1:9090/ui/#/proxies">
 <title>Web Ui</title>
 <desc>Lựa chọn các sever và các cài đặt khác</desc>
 </page>
