@@ -1,6 +1,6 @@
 # Path
 PHOME="$TOME/Module/Hack-Proxy"
-CLASH=$PHOME/Clash
+CLASH=$TEMP_DIR/Clash
 
 if [ ! -e /data/adb/service.d/Hack-Proxy.sh ];then
 mkdir -p /data/adb/service.d
