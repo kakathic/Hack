@@ -22,9 +22,6 @@ unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
 chmod -R 777 "€TOME/Module"
 rm -fr "€TEMP_DIR/Test.zip"
 rm -fr "€TEMP_DIR"/*
-Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
-unzip -o "$TEMP_DIR/Testvg.zip" -d "$TEMP_DIR"
-rm -fr "$TEMP_DIR/Testvg.zip"
 else
 ecgi "€loading"
 Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" "$PHOME/config.yaml"
