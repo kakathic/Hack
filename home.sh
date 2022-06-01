@@ -112,7 +112,7 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 
 <group>
 <action shell="hidden" reload="true" title="Giao diện Web" desc="Chủ đề đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2)" >
-<param name="kxkdbrb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2" option-sh="echo Dashboard; echo clash-dashboard/dist;"/>
+<param name="kxkdbrb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 external-ui: | cut -d : -f2" option-sh="echo Dashboard; echo Yacd;"/>
 <set>
 Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
 sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 external-ui:)/external-ui: €kxkdbrb/g" "$TEMP_DIR/kkc.yaml"
