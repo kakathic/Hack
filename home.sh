@@ -92,7 +92,7 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 
 <group>
 <action shell="hidden" reload="true" title="Mode" desc="Chế độ đã lựa chọn:$(Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2)" >
-<param name="Luachokhb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct;"/>
+<param name="Luachokhb" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 mode: | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct; echo Script;"/>
 <set>
 Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
 sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 mode:)/mode: €Luachokhb/g" "$TEMP_DIR/kkc.yaml"
