@@ -59,7 +59,7 @@ echo "
         path: ./run/€(date +"%H_%M_%S")_€RANDOM.yaml
         health-check:
             enable: true
-            url: http://www.gstatic.com/generate_204
+            url: http://google.com
             interval: 600
 ##€Tensv
 " >> "$TEMP_DIR/kkc.yaml"
@@ -75,7 +75,7 @@ echo "
         path: ./run/€KKFi
         health-check:
             enable: true
-            url: http://www.gstatic.com/generate_204
+            url: http://google.com
             interval: 600
 ##€Tensv
 " >> "$TEMP_DIR/kkc.yaml"
