@@ -10,6 +10,7 @@ cat << HiH | sed2
 <option type="refresh" icon="$TOME/usr/Tool/Loading.png" >$lammoi</option>
 <option type="default" auto-off="true">Cập nhật Config.yaml</option>
 <option type="default" id="kk2" reload="true" auto-off="true">Cập nhật toàn bộ</option>
+<option type="default" id="kk3" reload="true" auto-off="true">Cập nhật chủ đề</option>
 <option type="default" id="kk" >Nhật ký</option>
 <handler>
 # Start code
@@ -22,6 +23,8 @@ unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
 chmod -R 777 "€TOME/Module"
 rm -fr "€TEMP_DIR/Test.zip"
 rm -fr "€TEMP_DIR"/*
+elif [ "€menu_id" == "kk3" ];then
+rm -fr $TEMP_DIR/yacd-gh-pages
 else
 ecgi "€loading"
 Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" "$PHOME/config.yaml"
