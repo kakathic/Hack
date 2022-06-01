@@ -18,7 +18,7 @@ cat $PHOME/run/kernel.log
 elif [ "€menu_id" == "kk2" ];then
 ecgi "€loading"
 Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_DIR/Test.zip"
-unzip -o "€TEMP_DIR/Test.zip" -x Hack-Proxy/Clash -d "€TOME/Module"
+unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
 chmod -R 777 "€TOME/Module"
 rm -fr "€TEMP_DIR/Test.zip"
 rm -fr "€TEMP_DIR"/*
