@@ -81,19 +81,16 @@ fi
 </set>
 </action>
 
+
 <action shell="hidden" title="Xoá Sever" desc="Lựa chọn sever để xóa bỏ khỏi config.yaml" >
 <param name="Xsv" label="Lựa chọn" option-sh="grep '##' $PHOME/config.yaml | sed 's/##//g'"/>
+<param name="Xsvf" label="Lựa chọn" option-sh="cat $PHOME/run/Vip.yaml | tr ',' '\n' | grep name: | cut -d \&quot; -f2"/>
 <set>
+if [ €Xsvf ];then
+sed -i "/€Xsvf/d" $PHOME/run/Vip.yaml
+else
 sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' "$PHOME/config.yaml"
-</set>
-</action>
-</group>
-
-<group>
-<action shell="hidden" reload="true" title="Mode" desc="Chế độ đã lựa chọn:$(grep -m1 mode: $PHOME/config.yaml | cut -d : -f2)" >
-<param name="Luachokhb" label="Lựa chọn" value-sh="grep -m1 mode: $PHOME/config.yaml | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct; echo Script;"/>
-<set>
-sed -i -e "s/€(grep -m1 mode: $PHOME/config.yaml)/mode: €Luachokhb/g" "$PHOME/config.yaml"
+fi
 </set>
 </action>
 
