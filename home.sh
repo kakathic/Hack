@@ -105,7 +105,7 @@ Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 <param name="ksjdbdjdj" label="Lựa chọn" value-sh="Zhex $PHOME/config.yaml | grep -m1 stack: | cut -d : -f2" option-sh="echo system; echo gvisor;"/>
 <set>
 Zhex "$PHOME/config.yaml" > "$TEMP_DIR/kkc.yaml"
-sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 stack:)/stack: €ksjdbdjdj/g" "$TEMP_DIR/kkc.yaml"
+sed -i -e "s/€(Zhex $PHOME/config.yaml | grep -m1 stack:)/  stack: €ksjdbdjdj/g" "$TEMP_DIR/kkc.yaml"
 Xhex "$TEMP_DIR/kkc.yaml" > "$PHOME/config.yaml"
 </set>
 </action>
