@@ -57,7 +57,7 @@ echo "
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 36000
+            interval: 500
 ##€Tensv
 " >> "$PHOME/config.yaml"
 sed -i "s/#Themv/          - €Tensv\n#Themv/g" "$PHOME/config.yaml"
@@ -72,7 +72,7 @@ echo "
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 36000
+            interval: 500
 ##€Tensv
 " >> "$PHOME/config.yaml"
 sed -i "s/#Themv/          - €Tensv\n#Themv/g" "$PHOME/config.yaml"
