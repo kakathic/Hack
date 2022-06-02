@@ -125,7 +125,7 @@ sed -i -e "s/€(grep -m1 stack: $PHOME/config.yaml)/  stack: €ksjdbdjdj/g" "$
 
 
 <group>
-<page html="https://diachiip.com">
+<page html="https://checkip.vip">
 <title>Kiểm tra ip</title>
 <desc>Xem ip vị trí của bạn đang ở đâu</desc>
 </page>
