@@ -93,6 +93,15 @@ sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' "$PHOME/config.yam
 fi
 </set>
 </action>
+</group>
+<group>
+<action shell="hidden" reload="true" title="Mode" desc="Chế độ đã lựa chọn:$(grep -m1 mode: $PHOME/config.yaml | cut -d : -f2)" >
+<param name="Luachokhb" label="Lựa chọn" value-sh="grep -m1 mode: $PHOME/config.yaml | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct; echo Script;"/>
+<set>
+sed -i -e "s/€(grep -m1 mode: $PHOME/config.yaml)/mode: €Luachokhb/g" "$PHOME/config.yaml"
+fi
+</set>
+</action>
 
 
 <action shell="hidden" reload="true" title="Hệ thống" desc="Hệ thống đã lựa chọn:$(grep -m1 stack: $PHOME/config.yaml | cut -d : -f2)" >
