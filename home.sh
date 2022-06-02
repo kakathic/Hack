@@ -43,7 +43,7 @@ $PHOME/scripts/service.sh
 <param name="Ffile" type="file" title="Tệp tin" editable="true" suffix="yaml"/>
 <set>
 if [ €(echo €Durl | grep -cm1 vmess) == 1 ];then
-Url () { echo "€Durl" | sed 's|vmess:\/\/||g' | base64 -d 2>/dev/null | sed -e 's|"||g' -e 's|,|\n|g' -e 's| ||g' -e 's|{||g' -e 's|}||g' | grep -m1 €@ | cut -d: -f2; }
+Url () { echo "€Durl" | sed 's|vmess:\/\/||g' | base64 -d 2>/dev/null | sed -e 's|"||g' -e 's|,|\n|g' -e 's| ||g' -e 's|{||g' -e 's|}||g' -e 's|aid||g' | grep -m1 €@: | cut -d: -f2; }
 echo "  - { name: \"€Tensv\", type: vmess, server: €(Url add), uuid: €(Url id), port: 80, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: {path: \"/€(Url path | sed 's|/||g')\", headers: {Host: v.akamaized.net}}}" >> $PHOME/run/Vip.yaml
 elif [ €(echo €Durl | grep -cm1 trojan) == 1 ];then
 echo "  - { name: \"€Tensv\", type: trojan, server: €(echo €Durl | cut -d @ -f2 | cut -d : -f1), port: 443, password: €(echo €Durl | cut -d / -f3 | cut -d @ -f1), udp: true, sni: v.akamaized.net }" >> $PHOME/run/Vip.yaml
