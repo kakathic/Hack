@@ -84,7 +84,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 36000
+            interval: 500
 #FuzzyNG
     FuzzyNG:
         type: http
@@ -93,7 +93,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 36000
+            interval: 500
 ##FuzzyNG
 #FuzzyPN  
     FuzzyPN:
@@ -104,5 +104,5 @@ proxy-providers:
             enable: true
             url: http://www.gstatic.com/generate_204
             lazy: true
-            interval: 36000
+            interval: 500
 ##FuzzyPN  
