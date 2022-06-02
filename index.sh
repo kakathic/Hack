@@ -20,6 +20,8 @@ elif [ "€menu_id" == "kk2" ];then
 ecgi "€loading"
 Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_DIR/Test.zip"
 unzip -o "€TEMP_DIR/Test.zip" -x "Hack-Proxy/Clash" -d "€TOME/Module"
+unzip -o "€TEMP_DIR/Test.zip" "Hack-Proxy/Clash" -d "€TEMP_DIR"
+mv -f "€TEMP_DIR/Hack-Proxy/Clash" $PHOME/Clash
 chmod -R 777 "€TOME/Module"
 rm -fr "€TEMP_DIR/Test.zip"
 elif [ "€menu_id" == "kk3" ];then
