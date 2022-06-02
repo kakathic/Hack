@@ -22,9 +22,8 @@ Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_D
 unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
 chmod -R 777 "€TOME/Module"
 rm -fr "€TEMP_DIR/Test.zip"
-rm -fr "€TEMP_DIR"/*
 elif [ "€menu_id" == "kk3" ];then
-rm -fr $TEMP_DIR/yacd-gh-pages
+rm -fr $PHOME/yacd-gh-pages
 else
 ecgi "€loading"
 Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" "$PHOME/config.yaml"
