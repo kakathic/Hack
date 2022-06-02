@@ -83,11 +83,17 @@ fi
 
 
 <action shell="hidden" title="Xoá Sever" desc="Lựa chọn sever để xóa bỏ khỏi config.yaml" >
-<param name="Xsv" label="Lựa chọn" option-sh="grep '##' $PHOME/config.yaml | sed 's/##//g'"/>
-<param name="Xsvf" label="Lựa chọn" option-sh="cat $PHOME/run/Vip.yaml | tr ',' '\n' | grep name: | cut -d \&quot; -f2"/>
+<param name="Xsv" label="Lựa chọn" option-sh="echo No; grep '##' $PHOME/config.yaml | sed 's/##//g'"/>
+<param name="Xsvf" label="Lựa chọn" option-sh="echo No; cat $PHOME/run/Vip.yaml | tr ',' '\n' | grep name: | cut -d \&quot; -f2"/>
 <set>
-if [ €Xsvf ];then
+if [ "€Xsvf" == "No" ];then
+echo
+else
 sed -i "/€Xsvf/d" $PHOME/run/Vip.yaml
+fi
+
+if [ "€Xsv" == "No" ];then
+echo
 else
 sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' "$PHOME/config.yaml"
 fi
