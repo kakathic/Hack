@@ -111,7 +111,7 @@ fi
 
 
 <action shell="hidden" reload="true" title="Hệ thống" desc="Hệ thống đã lựa chọn:$(grep -m1 stack: $PHOME/config.yaml | cut -d : -f2)" >
-<param name="ksjdbdjdj" label="Lựa chọn" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo system; echo gvisor;"/>
+<param name="ksjdbdjdj" label="Lựa chọn" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo System; echo gVisor;"/>
 <set>
 sed -i -e "s/€(grep -m1 stack: $PHOME/config.yaml)/  stack: €ksjdbdjdj/g" "$PHOME/config.yaml"
 </set>
