@@ -10,7 +10,7 @@ cat << HiH | sed2
 <option type="refresh" icon="$TOME/usr/Tool/Loading.png" >$lammoi</option>
 <option type="default" auto-off="true">Cập nhật Config.yaml</option>
 <option type="default" id="kk2" reload="true" auto-off="true">Cập nhật toàn bộ</option>
-<option type="default" id="kk3" reload="true" auto-off="true">Cập nhật chủ đề</option>
+<option type="default" id="kk3" reload="true" auto-off="true">Cập nhật giao diện web</option>
 <option type="default" id="kk" >Nhật ký</option>
 <handler>
 # Start code
