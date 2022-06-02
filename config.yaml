@@ -18,7 +18,7 @@ profile:
 tun:
   enable: true
   device: utun
-  stack: gvisor
+  stack: system
   dns-hijack:
     - any:53
   auto-route: true
