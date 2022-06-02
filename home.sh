@@ -13,7 +13,7 @@ unzip -qo "$PHOME/Testvg.zip" -d "$PHOME"
 rm -fr "$PHOME/Testvg.zip"
 fi
 [ -e $PHOME/run/Vip.yaml ] || echo "proxies:
-  - {name: 🇭🇰 4G HK iamtayky, server: 104.208.104.245, port: 80, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: iamtayky.akamaized.net}}}" > $PHOME/run/Vip.yaml
+  - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 80, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: iamtayky.akamaized.net}}}" > $PHOME/run/Vip.yaml
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
 <items>
