@@ -69,6 +69,7 @@ proxy-groups:
 #Themv
     - name: ☠️ Magic
       type: load-balance
+      strategy: consistent-hashing 
       use:
           - 📲 Server
           - 🎉 FuzzyPN
