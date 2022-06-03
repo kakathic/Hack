@@ -43,22 +43,20 @@ rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - RULE-SET,anti-ad,REJECT
   - MATCH,🚀 Total
-  - MATCH,♻️ Auto
 proxy-groups:
     - name: 🚀 Total
       type: select
+      proxies:
+          - ♻️ Auto-ping
+          - ☢️ Load-balance
       use:
           - 📲 Server
           - 🎉 FuzzyPN
           - 💠 Yunaka
           - ⛽ Qthang
 #Themv
-      proxies:
-          - ♻️ Auto
-          - 🔄 Load-balancer
-    - name: 🔄 Load-balancer
+    - name: ☢️ Load-balance
       type: load-balance
-      strategy: consistent-hashing
       use:
           - 📲 Server
           - 🎉 FuzzyPN
@@ -66,8 +64,8 @@ proxy-groups:
           - ⛽ Qthang
 #Themv
       url: http://www.gstatic.com/generate_204
-      interval: 1
-    - name: "♻️ Auto"
+      interval: 600
+    - name: "♻️ Auto-ping"
       type: url-test
       use:
           - 📲 Server
