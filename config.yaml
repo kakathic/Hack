@@ -43,6 +43,7 @@ rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - RULE-SET,anti-ad,REJECT
   - MATCH,🚀 Total
+  - MATCH,☠️ Magic
   - MATCH,♻️ Auto
 proxy-groups:
     - name: 🚀 Total
