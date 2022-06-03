@@ -41,36 +41,36 @@ dns:
         - dhcp://utun
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
-  - RULE-SET,anti-ad,QC
+  - RULE-SET,anti-ad,Tắt QC
   - MATCH,Proxy
-  - MATCH,Auto
+  - MATCH,♻️ Tự động
 proxy-groups:
     - name: Proxy
       type: select
       use:
-          - Pro
+          - Máy chủ
           - FuzzyNG
           - FuzzyPN
 #Themv
       proxies:
-          - ♻️ Auto Ping
+          - ♻️ Tự động
 
-    - name: "Auto"
+    - name: "♻️ Tự động"
       type: url-test
       use:
-          - Pro
+          - Máy chủ
           - FuzzyNG
           - FuzzyPN
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 1
-    - name: QC
+    - name: Tắt QC
       type: select
       proxies:
           - DIRECT
           - REJECT
           - Proxy
-          - Auto
+          - ♻️ Tự động
 rule-providers:
     anti-ad:
         behavior: "domain"
@@ -83,9 +83,8 @@ proxy-providers:
         path: ./run/Vip.yaml
         health-check:
             enable: true
-            tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 3600
+            interval: 300
 #FuzzyNG
     FuzzyNG:
         type: http
@@ -93,9 +92,8 @@ proxy-providers:
         path: ./run/Sv1.yaml
         health-check:
             enable: true
-            tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 3600
+            interval: 300
 ##FuzzyNG
 #FuzzyPN  
     FuzzyPN:
@@ -104,8 +102,6 @@ proxy-providers:
         path: ./run/Sv2.yaml
         health-check:
             enable: true
-            tolerance: 200
             url: http://www.gstatic.com/generate_204
-            lazy: true
-            interval: 3600
+            interval: 300
 ##FuzzyPN  
