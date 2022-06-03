@@ -82,24 +82,26 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 300
+            interval: 600
 #FuzzyNG
     ⚔️ FuzzyNG:
         type: http
         url: https://fuzzyng.com/api/v1/client/subscribe?token=2f7fac7eb9d5d71b73283492241f617b
         path: ./run/Sv1.yaml
+        interval: 86400
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 300
+            interval: 600
 ##FuzzyNG
 #FuzzyPN  
     🎉 FuzzyPN:
         type: http
         url: https://api.fuzzypn.me/api/v1/client/subscribe?token=3b949386becc6b4a25f7bd5f9a82c6e7
         path: ./run/Sv2.yaml
+        interval: 86400
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 300
+            interval: 600
 ##FuzzyPN  
