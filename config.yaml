@@ -63,7 +63,7 @@ proxy-groups:
           - FuzzyPN
 #Themv
       url: 'http://www.gstatic.com/generate_204'
-      interval: 100
+      interval: 10
     - name: QC
       type: select
       proxies:
@@ -84,7 +84,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 500
+            interval: 50
 #FuzzyNG
     FuzzyNG:
         type: http
@@ -93,7 +93,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 500
+            interval: 50
 ##FuzzyNG
 #FuzzyPN  
     FuzzyPN:
@@ -104,5 +104,5 @@ proxy-providers:
             enable: true
             url: http://www.gstatic.com/generate_204
             lazy: true
-            interval: 500
+            interval: 50
 ##FuzzyPN  
