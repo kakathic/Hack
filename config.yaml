@@ -53,7 +53,7 @@ proxy-groups:
           - FuzzyPN
 #Themv
       proxies:
-          - Auto
+          - ♻️ Auto Ping
 
     - name: "Auto"
       type: url-test
