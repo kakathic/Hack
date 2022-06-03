@@ -47,16 +47,8 @@ proxy-groups:
     - name: 🚀 Total
       type: select
       proxies:
-          - ♻️ Auto-ping
-          - ☢️ Load-balance
-      use:
-          - 📲 Server
-          - 🎉 FuzzyPN
-          - 💠 Yunaka
-          - ⛽ Qthang
-#Themv
-    - name: ☢️ Load-balance
-      type: load-balance
+          - ♻️ Auto
+          - ☠️ Magic
       use:
           - 📲 Server
           - 🎉 FuzzyPN
@@ -65,8 +57,16 @@ proxy-groups:
 #Themv
       url: http://www.gstatic.com/generate_204
       interval: 600
-    - name: "♻️ Auto-ping"
+    - name: "♻️ Auto"
       type: url-test
+      use:
+          - 📲 Server
+          - 🎉 FuzzyPN
+          - 💠 Yunaka
+          - ⛽ Qthang
+#Themv
+    - name: ☠️ Magic
+      type: load-balance
       use:
           - 📲 Server
           - 🎉 FuzzyPN
@@ -90,7 +90,7 @@ proxy-providers:
             enable: true
             url: http://www.gstatic.com/generate_204
             interval: 600
-#🎉 FuzzyPN  
+#🎉 FuzzyPN
     🎉 FuzzyPN:
         type: http
         url: https://api.fuzzypn.me/api/v1/client/subscribe?token=3b949386becc6b4a25f7bd5f9a82c6e7
@@ -100,8 +100,8 @@ proxy-providers:
             enable: true
             url: http://www.gstatic.com/generate_204
             interval: 600
-##🎉 FuzzyPN  
-#💠 Yunaka  
+##🎉 FuzzyPN
+#💠 Yunaka
     💠 Yunaka:
         type: http
         url: https://api.fuzzypn.me/api/v1/client/subscribe?token=3b949386becc6b4a25f7bd5f9a82c6e7
@@ -111,7 +111,7 @@ proxy-providers:
             enable: true
             url: http://www.gstatic.com/generate_204
             interval: 600
-##💠 Yunaka  
+##💠 Yunaka
 #⛽ Qthang
     ⛽ Qthang:
         type: http
