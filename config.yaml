@@ -85,7 +85,7 @@ proxy-providers:
             enable: true
             tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 500
+            interval: 3600
 #FuzzyNG
     FuzzyNG:
         type: http
@@ -95,7 +95,7 @@ proxy-providers:
             enable: true
             tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 500
+            interval: 3600
 ##FuzzyNG
 #FuzzyPN  
     FuzzyPN:
@@ -107,5 +107,5 @@ proxy-providers:
             tolerance: 200
             url: http://www.gstatic.com/generate_204
             lazy: true
-            interval: 500
+            interval: 3600
 ##FuzzyPN  
