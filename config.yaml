@@ -55,9 +55,10 @@ proxy-groups:
 #Themv
       proxies:
           - ♻️ Auto
+          - 🔄 Load-balancer
     - name: 🔄 Load-balancer
       type: load-balance
-      #strategy: sticky-sessions
+      strategy: round-robin
       use:
           - 📲 Server
           - 🎉 FuzzyPN
@@ -66,7 +67,6 @@ proxy-groups:
 #Themv
       url: http://www.gstatic.com/generate_204
       interval: 300
-
     - name: "♻️ Auto"
       type: url-test
       use:
@@ -124,4 +124,3 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
             interval: 300
 ##⛽ Qthang
-
