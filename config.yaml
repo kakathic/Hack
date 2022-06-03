@@ -78,7 +78,7 @@ rule-providers:
         url: "https://raw.githubusercontent.com/Qiu2zhi1zhe3/anti-ad/main/anti-ad.yaml"
         path: ./run/anti-ad.yaml
 proxy-providers:
-    Pro:
+    Máy chủ:
         type: file
         path: ./run/Vip.yaml
         health-check:
