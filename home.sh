@@ -57,8 +57,10 @@ echo "
         path: ./run/€(date +"%H_%M_%S")_€RANDOM.yaml
         health-check:
             enable: true
+            tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 500
+            lazy: true
+            interval: 36000
 ##€Tensv
 " >> "$PHOME/config.yaml"
 sed -i "s/#Themv/          - €Tensv\n#Themv/g" "$PHOME/config.yaml"
@@ -72,8 +74,10 @@ echo "
         path: ./run/€KKFi
         health-check:
             enable: true
+            tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 500
+            lazy: true
+            interval: 36000
 ##€Tensv
 " >> "$PHOME/config.yaml"
 sed -i "s/#Themv/          - €Tensv\n#Themv/g" "$PHOME/config.yaml"
