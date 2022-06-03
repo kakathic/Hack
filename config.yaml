@@ -58,7 +58,7 @@ proxy-groups:
           - 🔄 Load-balancer
     - name: 🔄 Load-balancer
       type: load-balance
-      strategy: round-robin
+      strategy: consistent-hashing
       use:
           - 📲 Server
           - 🎉 FuzzyPN
@@ -66,7 +66,7 @@ proxy-groups:
           - ⛽ Qthang
 #Themv
       url: http://www.gstatic.com/generate_204
-      interval: 300
+      interval: 1
     - name: "♻️ Auto"
       type: url-test
       use:
