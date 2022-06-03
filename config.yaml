@@ -113,3 +113,15 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
             interval: 600
 ##Yunaka  
+#qthang 
+    🗡️qthang:
+        type: http
+        url: https://4gfree.qthang.net/api/v1/client/subscribe?token=4970274e31d66d8e30caeaae2ebacc28
+        path: ./run/Sv4.yaml
+        interval: 86400
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 600
+##qthang
+
