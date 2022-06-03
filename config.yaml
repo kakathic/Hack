@@ -55,6 +55,18 @@ proxy-groups:
 #Themv
       proxies:
           - ♻️ Auto
+    - name: 🔄 Load-balancer
+      type: load-balance
+      #strategy: sticky-sessions
+      use:
+          - 📲 Server
+          - 🎉 FuzzyPN
+          - 💠 Yunaka
+          - ⛽ Qthang
+#Themv
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+
     - name: "♻️ Auto"
       type: url-test
       use:
