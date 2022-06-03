@@ -17,7 +17,7 @@ mkdir -p /dev/net
 
 start_clash() {
 [ -e $Clash_run_path ] || mkdir -p $Clash_run_path
-    if [ "$(grep -cm1 'ipv6: false' "$Clash_config_file")" == 1 ] ; then
+    if [ "$(grep -cm1 'ipv6: false' $Clash_config_file)" == 1 ] ; then
         for net in /proc/sys/net/ipv6/conf/{wlan*,*data*} ; do
             echo ${net} | grep -q wlan
             if [ $? -eq 0 ] ; then
