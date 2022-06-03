@@ -63,7 +63,7 @@ proxy-groups:
           - FuzzyPN
 #Themv
       url: 'http://www.gstatic.com/generate_204'
-      interval: 10
+      interval: 1
     - name: QC
       type: select
       proxies:
@@ -83,8 +83,9 @@ proxy-providers:
         path: ./run/Vip.yaml
         health-check:
             enable: true
+            tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 50
+            interval: 500
 #FuzzyNG
     FuzzyNG:
         type: http
@@ -92,8 +93,9 @@ proxy-providers:
         path: ./run/Sv1.yaml
         health-check:
             enable: true
+            tolerance: 200
             url: http://www.gstatic.com/generate_204
-            interval: 50
+            interval: 500
 ##FuzzyNG
 #FuzzyPN  
     FuzzyPN:
@@ -102,7 +104,8 @@ proxy-providers:
         path: ./run/Sv2.yaml
         health-check:
             enable: true
+            tolerance: 200
             url: http://www.gstatic.com/generate_204
             lazy: true
-            interval: 50
+            interval: 500
 ##FuzzyPN  
