@@ -12,8 +12,10 @@ Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$PHOM
 unzip -qo "$PHOME/Testvg.zip" -d "$PHOME"
 rm -fr "$PHOME/Testvg.zip"
 fi
-[ -e $PHOME/run/Vip.yaml ] || echo "proxies:
-  - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 80, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: iamtayky.akamaized.net}}}" > $PHOME/run/Vip.yaml
+[ -e $PHOME/run/Vip.yaml ] || echo 'proxies:
+#🇭🇰 4G HK iamtayky
+  - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 80, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: iamtayky.akamaized.net}}}
+##🇭🇰 4G HK iamtayky' > $PHOME/run/Vip.yaml
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
 <items>
@@ -90,19 +92,11 @@ fi
 
 
 <action shell="hidden" title="Xoá Sever" desc="Lựa chọn sever để xóa bỏ khỏi config.yaml" >
-<param name="Xsv" label="Lựa chọn" option-sh="echo No; grep '##' $PHOME/config.yaml | sed 's/##//g'"/>
-<param name="Xsvf" label="Lựa chọn" option-sh="echo No; cat $PHOME/run/Vip.yaml | tr ',' '\n' | grep name: | cut -d \&quot; -f2"/>
+<param name="Xsv" label="Lựa chọn" required="required" option-sh="grep '##' $PHOME/config.yaml | sed 's/##//g' | awk '{print €0 &quot; 🎟️&quot;}';cat $PHOME/run/Vip.yaml | tr ',' '\n' | grep name: | cut -d \&quot; -f2 | awk '{print €0 &quot; 🎫&quot;}'"/>
 <set>
-if [ "€Xsvf" == "No" ];then
-echo
-else
-sed -i "/€Xsvf/d" $PHOME/run/Vip.yaml
-fi
-
-if [ "€Xsv" == "No" ];then
-echo
-else
-sed -i -e "/#€Xsv/,/##€Xsv/d" -e "/- €Xsv/d" -e '/^$/d' "$PHOME/config.yaml"
+if [ "€Xsv" ];then
+Took="€(echo "€Xsv" | sed -e 's| 🎫||g' -e 's| 🎟️||g')"
+[ "€(echo "€Xsv" | grep -cm1 '🎫')" == 1 ] && sed -i -e "/#€Took/,/##€Took/d" -e '/^$/d' "$PHOME/run/Vip.yaml" || sed -i -e "/#€Took/,/##€Took/d" -e "/- €Took/d" -e '/^$/d' "$PHOME/config.yaml"
 fi
 </set>
 </action>
