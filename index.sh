@@ -17,10 +17,12 @@ cat $PHOME/run/kernel.log
 else
 ecgi "€loading"
 Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_DIR/Test.zip"
-unzip -o "€TEMP_DIR/Test.zip" -x "Hack-Proxy/Clash" -d "€TOME/Module"
-unzip -o "€TEMP_DIR/Test.zip" "Hack-Proxy/Clash" -d "€TEMP_DIR"
-mv -f "€TEMP_DIR/Hack-Proxy/Clash" $PHOME/Clash
-chmod -R 777 "€TOME/Module"
+Linkhhf="€(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
+Taive "https://github.com€Linkhhf" "€TEMP_DIR/Clash.gz"
+unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
+gzip -d "€TEMP_DIR/Clash.gz"
+mv -f "€TEMP_DIR/Clash" $PHOME/Clash
+chmod -R 777 "$PHOME"
 rm -fr "€TEMP_DIR/Test.zip"
 rm -fr $PHOME/yacd-gh-pages
 fi
