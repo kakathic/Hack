@@ -48,7 +48,7 @@ Url () { echo "€Durl" | sed 's|vmess:\/\/||g' | base64 -d 2>/dev/null | sed -e
 [ "€(Url add)" == 'v.akamaized.net' ] && Tck="€(Url host)" || Tck="€(Url add)"
 Ukr="€(Xem http://ip-api.com/csv/€Tck\?fields=query)"
 echo "# Host: €(Url host), €(Url add), €Ukr
-  - { name: \"€Tensv\", type: vmess, server: €Ukr, uuid: €(Url id), port: 80, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, network: ws, ws-opts: { method: \"GET\" path: \"€(Url path)\", headers: { Host: v.akamaized.net } } }" >> $PHOME/run/Vip.yaml
+  - { name: \"€Tensv\", type: vmess, server: €Ukr, uuid: €(Url id), port: 80, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, network: ws, ws-opts: { method: \"GET\" path: \"€(echo €(Url path))\", headers: { Host: v.akamaized.net } } }" >> $PHOME/run/Vip.yaml
 elif [ €(echo €Durl | grep -cm1 trojan) == 1 ];then
 Jddg="€(echo €Durl | cut -d @ -f2 | cut -d : -f1)"
 Ukr="€(Xem http://ip-api.com/csv/€Jddg\?fields=query)"
