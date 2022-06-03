@@ -41,7 +41,7 @@ dns:
         - dhcp://utun
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
-  - RULE-SET,anti-ad,🗑️ QC
+  - RULE-SET,anti-ad,REJECT
   - MATCH,🚀 Total
   - MATCH,♻️ Auto
 proxy-groups:
@@ -63,12 +63,7 @@ proxy-groups:
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 1
-    - name: 🗑️ QC
-      type: select
-      proxies:
-          - DIRECT
-          - REJECT
-          - 🚀 Total
+
 rule-providers:
     anti-ad:
         behavior: "domain"
