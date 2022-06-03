@@ -103,7 +103,7 @@ proxy-providers:
             interval: 600
 ##FuzzyPN  
 #Yunaka  
-     💠 Yunaka:
+    💠 Yunaka:
         type: http
         url: https://api.fuzzypn.me/api/v1/client/subscribe?token=3b949386becc6b4a25f7bd5f9a82c6e7
         path: ./run/Sv3.yaml
