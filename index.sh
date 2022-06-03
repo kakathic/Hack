@@ -23,7 +23,7 @@ unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
 gzip -d "€TEMP_DIR/Clash.gz"
 mv -f "€TEMP_DIR/Clash" $PHOME/Clash
 chmod -R 777 "$PHOME"
-rm -fr "€TEMP_DIR/Test.zip"
+rm -fr "€TEMP_DIR"/*
 rm -fr $PHOME/yacd-gh-pages
 fi
 # End code
