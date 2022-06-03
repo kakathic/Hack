@@ -51,6 +51,7 @@ proxy-groups:
           - 📲 Server
           - ⚔️ FuzzyNG
           - 🎉 FuzzyPN
+          - 💠 Yunaka
 #Themv
       proxies:
           - ♻️ Auto
@@ -60,6 +61,7 @@ proxy-groups:
           - 📲 Server
           - ⚔️ FuzzyNG
           - 🎉 FuzzyPN
+          - 💠 Yunaka
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 1
@@ -100,3 +102,14 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
             interval: 600
 ##FuzzyPN  
+#Yunaka  
+     💠 Yunaka:
+        type: http
+        url: https://api.fuzzypn.me/api/v1/client/subscribe?token=3b949386becc6b4a25f7bd5f9a82c6e7
+        path: ./run/Sv3.yaml
+        interval: 86400
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 600
+##Yunaka  
