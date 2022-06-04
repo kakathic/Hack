@@ -61,17 +61,6 @@ proxy-groups:
 #Themv
       url: http://www.gstatic.com/generate_204
       interval: 300
-    - name: "♻️ Auto"
-      type: url-test
-      use:
-          - 📲 Server
-          - 🎉 FuzzyPN
-          - 💠 Yunaka
-          - ⛽ Qthang
-          - ⚔️ ShopVPN1
-          - ⚔️ ShopVPN2
-          - 🌊 FuzzyNG
-#Themv
     - name: ☠️ Magic
       type: load-balance
       strategy: consistent-hashing 
@@ -84,8 +73,21 @@ proxy-groups:
           - ⚔️ ShopVPN2
           - 🌊 FuzzyNG
 #Themv
+    - name: "♻️ Auto"
+      type: url-test
+      use:
+          - 📲 Server
+          - 🎉 FuzzyPN
+          - 💠 Yunaka
+          - ⛽ Qthang
+          - ⚔️ ShopVPN1
+          - ⚔️ ShopVPN2
+          - 🌊 FuzzyNG
+#Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 1
+      tolerance: 150
+      lazy: true
 
 rule-providers:
     anti-ad:
