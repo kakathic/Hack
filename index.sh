@@ -20,6 +20,7 @@ Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_D
 unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module"
 rm -fr "€TEMP_DIR"/*
 rm -fr $PHOME/yacd-gh-pages
+rm -fr $PHOME/Clash
 fi
 # End code
 </handler></page></group>
