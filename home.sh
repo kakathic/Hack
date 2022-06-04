@@ -50,7 +50,7 @@ $PHOME/scripts/service.sh
 
 
 <group>
-<action shell="hidden">
+<action shell="hidden" reload="true">
 <title>Thêm Sever</title>
 <desc>Nhập đường dẫn File, URL để thêm vào list</desc>
 <param name="Tensv" value-sh="Xset Tensv" type="text" desc="Nhập Url hoặc Tệp tin nếu nhập cả hai nó chỉ nhận Url" placeholder="Tên Sever" required="required" />
@@ -102,7 +102,7 @@ fi
 </action>
 
 
-<action shell="hidden" title="Xoá Sever" desc="Lựa chọn sever để xóa bỏ khỏi config.yaml" >
+<action reload="true" shell="hidden" title="Xoá Sever" desc="Lựa chọn sever để xóa bỏ khỏi config.yaml" >
 <param name="Xsv" label="Lựa chọn" required="required" option-sh="grep '##' $PHOME/config.yaml | sed 's/##//g' | awk '{print €0 &quot; 🎟️&quot;}';cat $PHOME/run/Vip.yaml | tr ',' '\n' | grep name: | cut -d \&quot; -f2 | awk '{print €0 &quot; 🎫&quot;}'"/>
 <set>
 if [ "€Xsv" ];then
