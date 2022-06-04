@@ -17,6 +17,7 @@ cat $PHOME/run/kernel.log
 else
 ecgi "€loading"
 Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_DIR/Test.zip"
+unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module"
 rm -fr "€TEMP_DIR"/*
 rm -fr $PHOME/yacd-gh-pages
 fi
