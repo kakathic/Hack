@@ -12,6 +12,16 @@ Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$PHOM
 unzip -qo "$PHOME/Testvg.zip" -d "$PHOME"
 rm -fr "$PHOME/Testvg.zip"
 fi
+
+if [ ! -e "$CLASH" ];then
+Linkhhf="€(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
+Taive "https://github.com€Linkhhf" "€TEMP_DIR/Clash.gz"
+unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
+gzip -d "€TEMP_DIR/Clash.gz"
+mv -f "€TEMP_DIR/Clash" $PHOME/Clash
+chmod -R 777 "$PHOME"
+fi
+
 [ -e $PHOME/run/Vip.yaml ] || echo 'proxies:
 #🇭🇰 4G HK iamtayky
   - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 80, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: iamtayky.akamaized.net}}}
