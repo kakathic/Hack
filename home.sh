@@ -143,7 +143,7 @@ sed -i -e "s/€(grep -m1 stack: $PHOME/config.yaml)/  stack: €ksjdbdjdj/g" "$
 
 
 <group>
-<page html="http://fastvpn-ph.speedtestcustom.com">
+<page html="https://speed.cloudflare.com">
 <title>Speed Test</title>
 <desc>Kiểm tra tốc độ tải xuống, lên, ping mạng</desc>
 </page>
