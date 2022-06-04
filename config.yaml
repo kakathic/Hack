@@ -55,6 +55,8 @@ proxy-groups:
           - 🎉 FuzzyPN
           - 💠 Yunaka
           - ⛽ Qthang
+          - ⚔️ ShopVPN1
+          - ⚔️ ShopVPN2
 #Themv
       url: http://www.gstatic.com/generate_204
       interval: 300
@@ -65,6 +67,8 @@ proxy-groups:
           - 🎉 FuzzyPN
           - 💠 Yunaka
           - ⛽ Qthang
+          - ⚔️ ShopVPN1
+          - ⚔️ ShopVPN2
 #Themv
     - name: ☠️ Magic
       type: load-balance
@@ -74,6 +78,8 @@ proxy-groups:
           - 🎉 FuzzyPN
           - 💠 Yunaka
           - ⛽ Qthang
+          - ⚔️ ShopVPN1
+          - ⚔️ ShopVPN2
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 1
@@ -124,3 +130,23 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
             interval: 300
 ##⛽ Qthang
+#⚔️ ShopVPN1
+    ⚔️ ShopVPN1:
+        type: http
+        url: https://shopvpn.net/api/v1/client/subscribe?token=46ce8445baee9be4ca9c17250ed37973
+        path: ./run/Sv5.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 300
+##⚔️ ShopVPN1
+#⚔️ ShopVPN2
+    ⚔️ ShopVPN2:
+        type: http
+        url: https://shopvpn.net/api/v1/client/subscribe?token=8a435752f0d167734560dda1fe2ca5a3
+        path: ./run/Sv6.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 300
+##⚔️ ShopVPN2
