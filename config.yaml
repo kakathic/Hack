@@ -57,7 +57,7 @@ proxy-groups:
           - ⛽ Qthang
 #Themv
       url: http://www.gstatic.com/generate_204
-      interval: 600
+      interval: 300
     - name: "♻️ Auto"
       type: url-test
       use:
