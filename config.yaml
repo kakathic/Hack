@@ -133,7 +133,7 @@ proxy-providers:
 #⚔️ ShopVPN1
     ⚔️ ShopVPN1:
         type: http
-        url: https://shopvpn.net/api/v1/client/subscribe?token=46ce8445baee9be4ca9c17250ed37973
+        url: https://shopvpn.net/api/v1/client/subscribe?token=8a435752f0d167734560dda1fe2ca5a3
         path: ./run/Sv5.yaml
         health-check:
             enable: true
@@ -143,7 +143,7 @@ proxy-providers:
 #⚔️ ShopVPN2
     ⚔️ ShopVPN2:
         type: http
-        url: https://shopvpn.net/api/v1/client/subscribe?token=8a435752f0d167734560dda1fe2ca5a3
+        url: https://shopvpn.net/api/v1/client/subscribe?token=46ce8445baee9be4ca9c17250ed37973
         path: ./run/Sv6.yaml
         health-check:
             enable: true
