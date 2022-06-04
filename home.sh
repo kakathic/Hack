@@ -65,7 +65,7 @@ echo "#€Tensv
 ##€Tensv" >> $PHOME/run/Vip.yaml
 elif [ €(echo €Durl | grep -cm1 trojan) == 1 ];then
 echo "#€Tensv
-  - { name: \"€Tensv\", type: trojan, server: €(echo €Durl | cut -d @ -f2 | cut -d : -f1), port: 443, password: €(echo €Durl | cut -d / -f3 | cut -d @ -f1), udp: true, sni: v.akamaized.net }
+  - { name: \"€Tensv\", type: trojan, server: €(echo €Durl | cut -d @ -f2 | cut -d : -f1), port: 443, password: €(echo €Durl | cut -d / -f3 | cut -d @ -f1), sni: v.akamaized.net }
 ##€Tensv" >> $PHOME/run/Vip.yaml
 elif [ €Durl ];then
 echo "
