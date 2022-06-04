@@ -78,11 +78,6 @@ proxy-groups:
       lazy: true
     - name: ☠️ Magic
       type: load-balance
-      strategy: consistent-hashing
-      tolerance: 150
-      lazy: true
-      interval: 300
-      url: 'http://www.gstatic.com/generate_204'
       use:
           - 📲 Server
           - 🎉 FuzzyPN
@@ -92,6 +87,9 @@ proxy-groups:
           - ⚔️ ShopVPN2
           - 🌊 FuzzyNG
 #Themv
+      strategy: consistent-hashing
+      interval: 300
+      url: 'http://www.gstatic.com/generate_204'
 rule-providers:
     anti-ad:
         behavior: "domain"
