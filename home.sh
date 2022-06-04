@@ -21,10 +21,14 @@ mv -f "$TEMP_DIR/Clash" $PHOME/Clash
 chmod -R 777 "$PHOME"
 fi
 
-[ -e $PHOME/run/Vip.yaml ] || echo 'proxies:
+if [ ! -e $PHOME/run/Vip.yaml ];then
+mkdir -p "$PHOME/run"
+echo 'proxies:
 #🇭🇰 4G HK iamtayky
   - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 80, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: iamtayky.akamaized.net}}}
 ##🇭🇰 4G HK iamtayky' > $PHOME/run/Vip.yaml
+fi
+
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
 <items>
