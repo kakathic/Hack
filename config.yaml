@@ -87,7 +87,7 @@ proxy-groups:
           - ⚔️ ShopVPN2
           - 🌊 FuzzyNG
 #Themv
-      strategy: consistent-hashing
+      strategy: sticky-sessions # consistent-hashing
       interval: 300
       url: 'http://www.gstatic.com/generate_204'
 rule-providers:
