@@ -57,6 +57,7 @@ proxy-groups:
           - ⛽ Qthang
           - ⚔️ ShopVPN1
           - ⚔️ ShopVPN2
+          - 🌊 FuzzyNG
 #Themv
       url: http://www.gstatic.com/generate_204
       interval: 300
@@ -69,6 +70,7 @@ proxy-groups:
           - ⛽ Qthang
           - ⚔️ ShopVPN1
           - ⚔️ ShopVPN2
+          - 🌊 FuzzyNG
 #Themv
     - name: ☠️ Magic
       type: load-balance
@@ -80,6 +82,7 @@ proxy-groups:
           - ⛽ Qthang
           - ⚔️ ShopVPN1
           - ⚔️ ShopVPN2
+          - 🌊 FuzzyNG
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 1
@@ -150,3 +153,13 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
             interval: 300
 ##⚔️ ShopVPN2
+#🌊 FuzzyNG
+    🌊 FuzzyNG:
+        type: http
+        url: https://fuzzyng.com/api/v1/client/subscribe?token=0156a58bebd16471391732d54763dd30
+        path: ./run/Sv7.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 300
+##🌊 FuzzyNG
