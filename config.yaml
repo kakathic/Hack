@@ -78,7 +78,9 @@ proxy-groups:
       lazy: true
     - name: ☠️ Magic
       type: load-balance
-      strategy: consistent-hashing 
+      strategy: consistent-hashing
+      tolerance: 150
+      lazy: true
       use:
           - 📲 Server
           - 🎉 FuzzyPN
