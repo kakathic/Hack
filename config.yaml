@@ -86,7 +86,7 @@ proxy-groups:
           - 🌊 FuzzyNG
 #Themv
       strategy: sticky-sessions # consistent-hashing
-      interval: 300
+      interval: 1
       url: http://www.gstatic.com/generate_204
 rule-providers:
     anti-ad:
