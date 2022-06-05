@@ -15,6 +15,7 @@ cat << HiH | sed2
 if [ "€menu_id" == "kk" ];then
 cat $PHOME/run/kernel.log
 elif [ "€menu_id" == "kk3" ];then
+Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $PHOME/config.yaml
 if [ -e $PHOME/run/clash.pid ];then
 $PHOME/scripts/service.sh
 echo
