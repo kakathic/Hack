@@ -48,7 +48,7 @@ dns:
         - 1.1.1.1
         - https://dns.google/dns-query
         - https://cloudflare-dns.com/dns-query
-        - dhcp://utun
+        - dhcp://Meta
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
@@ -97,9 +97,9 @@ proxy-groups:
           - ⚔️ ShopVPN2
           - 🌊 FuzzyNG
 #Themv
-      strategy: sticky-sessions # consistent-hashing
+      strategy: consistent-hashing
       url: http://www.gstatic.com/generate_204
-      interval: 1
+      interval: 100
 rule-providers:
     anti-ad:
         behavior: "domain"
@@ -116,7 +116,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 10
+            interval: 2
 #🎉 FuzzyPN
     🎉 FuzzyPN:
         type: http
