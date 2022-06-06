@@ -1,4 +1,3 @@
-
 proxies:
     - { name: '🇸🇬 ✿ Singapore', type: vmess, server: sg.fuzzyng.com, port: 80, uuid: fc93a845-c480-4475-af86-6d2ea46400ee, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzyng?ed=2048', headers: { Host: fuzzyng.akamaized.net } } }
     - { name: '🇸🇬 ✿ Singapore VIP', type: vmess, server: sgvip.fuzzyng.com, port: 443, uuid: fc93a845-c480-4475-af86-6d2ea46400ee, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, servername: v.akamaized.net, network: grpc, grpc-opts: { grpc-service-name: fuzzyng } }
@@ -16,7 +15,6 @@ proxies:
     - { name: '🇻🇳 ✿ Hà Nội 04', type: vmess, server: 103.167.197.26, port: 80, uuid: fc93a845-c480-4475-af86-6d2ea46400ee, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzyng?ed=2048', headers: { Host: fuzzyng.akamaized.net } } }
     - { name: '🇻🇳 ✿ Hà Nội 05', type: vmess, server: hn5.fuzzyng.com, port: 80, uuid: fc93a845-c480-4475-af86-6d2ea46400ee, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzyng?ed=2048', headers: { Host: fuzzyng.akamaized.net } } }
     - { name: '🇻🇳 ✿ Hà Nội 06', type: vmess, server: 103.167.197.23, port: 80, uuid: fc93a845-c480-4475-af86-6d2ea46400ee, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzyng?ed=2048', headers: { Host: fuzzyng.akamaized.net } } }
-
     - { name: '🇸🇬 ➛ Singapore', type: vmess, server: sg.fuzzyng.com, port: 80, uuid: 4b198a48-b1eb-4b8f-8431-33b7f9dac581, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzyng?ed=2048', headers: { Host: fuzzyng.akamaized.net } } }
     - { name: '🇻🇳 ➛Hà Nội Shadow WF', type: ss, server: hn.fuzzyng.com, port: 1234, cipher: chacha20-ietf-poly1305, password: 4b198a48-b1eb-4b8f-8431-33b7f9dac581, udp: true }
     - { name: '🇻🇳 ➛Hà Nội Ip Động', type: vmess, server: hn.fuzzyng.com, port: 80, uuid: 4b198a48-b1eb-4b8f-8431-33b7f9dac581, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzyng?ed=2048', headers: { Host: fuzzyng.akamaized.net } } }
@@ -24,7 +22,6 @@ proxies:
     - { name: '🇻🇳 ➛HCM Shadow WF', type: ss, server: hcm.fuzzyng.com, port: 1234, cipher: chacha20-ietf-poly1305, password: 4b198a48-b1eb-4b8f-8431-33b7f9dac581, udp: true }
     - { name: '🇻🇳 ➛HCM Ip Động', type: vmess, server: hcm.fuzzyng.com, port: 80, uuid: 4b198a48-b1eb-4b8f-8431-33b7f9dac581, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzyng?ed=2048', headers: { Host: fuzzyng.akamaized.net } } }
     - { name: '🇻🇳 ➛HCM TLS', type: trojan, server: hcm.fuzzyng.com, port: 443, password: 4b198a48-b1eb-4b8f-8431-33b7f9dac581, udp: true, sni: fuzzyng.akamaized.net, skip-cert-verify: true }
-
     - { name: '🇻🇳 Hanoi Free', type: vmess, server: hnf.fuzzypn.me, port: 80, uuid: db44cfff-a622-4619-93e5-559c0836f9e1, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzypn?ed=121212', headers: { Host: Hteendepzai.akamaized.net } } }
     - { name: '🇻🇳 HCM Free', type: vmess, server: hcmf.fuzzypn.me, port: 80, uuid: db44cfff-a622-4619-93e5-559c0836f9e1, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzypn?ed=121212', headers: { Host: Hteendepzai.akamaized.net } } }
     - { name: '🇸🇬 Singapore Free', type: vmess, server: singf.fuzzypn.me, port: 80, uuid: db44cfff-a622-4619-93e5-559c0836f9e1, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: '/fuzzypn?ed=121212', headers: { Host: Hteendepzai.akamaized.net } } }
@@ -33,7 +30,6 @@ proxies:
     - { name: '🇻🇳 HCM Gaming Free', type: vmess, server: hcmf.fuzzypn.me, port: 443, uuid: db44cfff-a622-4619-93e5-559c0836f9e1, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, servername: v.akamaized.net, network: grpc, grpc-opts: { grpc-service-name: fuzzypn } }
     - { name: '🇸🇬 Singapore Gaming Free', type: vmess, server: singf.fuzzypn.me, port: 443, uuid: db44cfff-a622-4619-93e5-559c0836f9e1, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, servername: v.akamaized.net, network: grpc, grpc-opts: { grpc-service-name: fuzzypn } }
     - { name: '🇭🇰 HK Gaming Free', type: vmess, server: hkf.fuzzypn.me, port: 443, uuid: db44cfff-a622-4619-93e5-559c0836f9e1, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, servername: v.akamaized.net, network: grpc, grpc-opts: { grpc-service-name: fuzzypn } }
-
     - { name: '🇭🇰 × Hồng Kông(1)', type: vmess, server: hk1.4gfree.qthang.net, port: '80', uuid: 748d40f6-6f82-43a0-a519-12883b1cb600, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /qthang, headers: { Host: qthang.akamaized.net } }, ws-path: /qthang, ws-headers: { Host: qthang.akamaized.net } }
     - { name: '🇯🇵 × Japan(1)', type: vmess, server: jp1.4gfree.qthang.net, port: '80', uuid: 748d40f6-6f82-43a0-a519-12883b1cb600, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /qthang, headers: { Host: qthang.akamaized.net } }, ws-path: /qthang, ws-headers: { Host: qthang.akamaized.net } }
     - { name: '🇸🇬 × Singapore(1)', type: vmess, server: sg1.4gfree.qthang.net, port: '80', uuid: 748d40f6-6f82-43a0-a519-12883b1cb600, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /qthang, headers: { Host: qthang.akamaized.net } }, ws-path: /qthang, ws-headers: { Host: qthang.akamaized.net } }
