@@ -26,8 +26,8 @@ fi
 [ -e "$PHOME/Country.mmdb" ] || Taive "https://github.com/Loyalsoldier/geoip/releases/latest/download/Country-only-cn-private.mmdb" "$PHOME/Country.mmdb"
 
 if [ ! -e $TOME/bin/Clash ];then
-Linkhhf="€(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
-Taive "https://github.com€Linkhhf" "$TEMP_DIR/Clash.gz"
+Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
+Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
 gzip -d "$TEMP_DIR/Clash.gz"
 mv -f "$TEMP_DIR/Clash" $TOME/bin/Clash
 fi
