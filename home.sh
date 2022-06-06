@@ -151,7 +151,7 @@ fi
 
 
 <text/>
-<text title="Thông tin" desc-sh="Xem https://raw.githubusercontent.com/kakathic/Hack/Proxy/README.md"/>
+<text title="Thông tin" desc-sh="[ $(Online) == 1 ] && Xem https://raw.githubusercontent.com/kakathic/Hack/Proxy/README.md || echi Vui lòng kết nối internet!"/>
 
 
 </items>
