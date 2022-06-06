@@ -61,12 +61,7 @@ proxy-groups:
       type: select
       use:
           - 📲 Server
-          - 🎉 FuzzyPN
-          - 💠 Yunaka
-          - ⛽ Qthang
-          - ⚔️ ShopVPN1
-          - 🎯 ShopVPN2
-          - 🌊 FuzzyNG
+          - 🎯 Machine
       proxies:
           - 📢 Auto
           - ☠️ Magic
@@ -76,12 +71,7 @@ proxy-groups:
       type: url-test
       use:
           - 📲 Server
-          - 🎉 FuzzyPN
-          - 💠 Yunaka
-          - ⛽ Qthang
-          - ⚔️ ShopVPN1
-          - 🎯 ShopVPN2
-          - 🌊 FuzzyNG
+          - 🎯 Machine
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 1
@@ -91,12 +81,7 @@ proxy-groups:
       type: load-balance
       use:
           - 📲 Server
-          - 🎉 FuzzyPN
-          - 💠 Yunaka
-          - ⛽ Qthang
-          - ⚔️ ShopVPN1
-          - 🎯 ShopVPN2
-          - 🌊 FuzzyNG
+          - 🎯 Machine
 #Themv
       strategy: consistent-hashing # round-robin
       url: 'http://www.gstatic.com/generate_204'
@@ -120,57 +105,12 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
             interval: 2
 
-    🌊 FuzzyNG:
-        type: file
-        path: ./run/Sv1.yaml
+    🎯 Machine:
+        type: http
+        url: https://raw.githubusercontent.com/kakathic/Hack/Proxy/run/Add.yaml
+        path: ./run/Add.yaml
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
             interval: 2
-##🌊 FuzzyNG
-
-    🎉 FuzzyPN:
-        type: file
-        path: ./run/Sv2.yaml
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 2
-##🎉 FuzzyPN
-
-    💠 Yunaka:
-        type: file
-        path: ./run/Sv3.yaml
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 2
-##💠 Yunaka
-
-    ⛽ Qthang:
-        type: file
-        path: ./run/Sv4.yaml
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 2
-##⛽ Qthang
-
-    ⚔️ ShopVPN1:
-        type: file
-        path: ./run/Sv5.yaml
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 2
-##⚔️ ShopVPN1
-
-    🎯 ShopVPN2:
-        type: file
-        path: ./run/Sv6.yaml
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 2
-##🎯 ShopVPN2
 
