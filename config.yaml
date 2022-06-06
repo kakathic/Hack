@@ -1,16 +1,18 @@
 allow-lan: true
 ipv6: false
 mode: Rule
-udp: false
-log-level: silent
+udp: true
+log-level: silent 
 external-controller: 127.0.0.1:9090
 external-ui: yacd-gh-pages
-unified-delay: true
+
 bind-address: '*'
 routing-mark: 6666
 
-skip-cert-verify: true
-tcp-concurrent: true
+unified-delay: true
+geodata-mode: true
+skip-cert-verify: false
+tcp-concurrent: false
 enable-process: true
 interface-name: Meta
 
@@ -25,11 +27,7 @@ tun:
   device: Meta
   stack: System
   dns-hijack:
-     - 198.18.0.2:53
-     - 8.8.8.8:53
-     - tcp://8.8.8.8:53
-     - any:53
-     - tcp://any:53
+    - any:53
   auto-route: true
   auto-detect-interface: true
 
@@ -43,37 +41,29 @@ dns:
   default-nameserver:
         - 8.8.8.8
         - 1.1.1.1
-  nameserver:
-        - 8.8.8.8
-        - 1.1.1.1
-        - https://dns.google/dns-query
-        - https://cloudflare-dns.com/dns-query
-        - dhcp://Meta
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - RULE-SET,anti-ad,REJECT
   - MATCH,🚀 Total
-  - MATCH,☠️ Magic
-  - MATCH,♻️ Auto
 
 proxy-groups:
     - name: 🚀 Total
       type: select
-      proxies:
-          - ♻️ Auto
-          - ☠️ Magic
       use:
           - 📲 Server
           - 🎉 FuzzyPN
           - 💠 Yunaka
           - ⛽ Qthang
           - ⚔️ ShopVPN1
-          - ⚔️ ShopVPN2
+          - 🎯 ShopVPN2
           - 🌊 FuzzyNG
+      proxies:
+          - 📢 Auto
+          - ☠️ Magic
 #Themv
 
-    - name: "♻️ Auto"
+    - name: "📢 Auto"
       type: url-test
       use:
           - 📲 Server
@@ -81,11 +71,13 @@ proxy-groups:
           - 💠 Yunaka
           - ⛽ Qthang
           - ⚔️ ShopVPN1
-          - ⚔️ ShopVPN2
+          - 🎯 ShopVPN2
           - 🌊 FuzzyNG
 #Themv
-      url: http://www.gstatic.com/generate_204
-      interval: 1
+      url: 'http://www.gstatic.com/generate_204'
+      interval: 150
+      filter: "🇻🇳|VN"
+
     - name: ☠️ Magic
       type: load-balance
       use:
@@ -94,92 +86,82 @@ proxy-groups:
           - 💠 Yunaka
           - ⛽ Qthang
           - ⚔️ ShopVPN1
-          - ⚔️ ShopVPN2
+          - 🎯 ShopVPN2
           - 🌊 FuzzyNG
 #Themv
-      strategy: consistent-hashing
-      url: http://www.gstatic.com/generate_204
-      interval: 100
+      strategy: consistent-hashing # round-robin
+      url: 'http://www.gstatic.com/generate_204'
+      interval: 300
+      filter: "🇻🇳|VN"
+
 rule-providers:
     anti-ad:
         behavior: "domain"
         type: http
         url: "https://raw.githubusercontent.com/Qiu2zhi1zhe3/anti-ad/main/anti-ad.yaml"
         path: ./run/anti-ad.yaml
-        interval: 30000
+        interval: 10000
+
 proxy-providers:
     📲 Server:
-        behavior: "classical"
         type: file
         path: ./run/Vip.yaml
-        interval: 30000
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
             interval: 2
-#🎉 FuzzyPN
-    🎉 FuzzyPN:
-        type: http
-        url: https://api.fuzzypn.me/api/v1/client/subscribe?token=3b949386becc6b4a25f7bd5f9a82c6e7
-        path: ./run/Sv2.yaml
-        interval: 30000
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 1000
-##🎉 FuzzyPN
-#💠 Yunaka
-    💠 Yunaka:
-        type: http
-        url: https://api.fuzzypn.me/api/v1/client/subscribe?token=3b949386becc6b4a25f7bd5f9a82c6e7
-        path: ./run/Sv3.yaml
-        interval: 30000
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 1000
-##💠 Yunaka
-#⛽ Qthang
-    ⛽ Qthang:
-        type: http
-        url: https://4gfree.qthang.net/api/v1/client/subscribe?token=4970274e31d66d8e30caeaae2ebacc28
-        path: ./run/Sv4.yaml
-        interval: 30000
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 1000
-##⛽ Qthang
-#⚔️ ShopVPN1
-    ⚔️ ShopVPN1:
-        type: http
-        url: https://shopvpn.net/api/v1/client/subscribe?token=8a435752f0d167734560dda1fe2ca5a3
-        path: ./run/Sv5.yaml
-        interval: 30000
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 1000
-##⚔️ ShopVPN1
-#⚔️ ShopVPN2
-    ⚔️ ShopVPN2:
-        type: http
-        url: https://shopvpn.net/api/v1/client/subscribe?token=46ce8445baee9be4ca9c17250ed37973
-        path: ./run/Sv6.yaml
-        interval: 30000
-        health-check:
-            enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 1000
-##⚔️ ShopVPN2
-#🌊 FuzzyNG
+
     🌊 FuzzyNG:
-        type: http
-        url: https://fuzzyng.com/api/v1/client/subscribe?token=0156a58bebd16471391732d54763dd30
-        path: ./run/Sv7.yam
-        interval: 30000
+        type: file
+        path: ./run/Sv1.yaml
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 1000
+            interval: 2
 ##🌊 FuzzyNG
+
+    🎉 FuzzyPN:
+        type: file
+        path: ./run/Sv2.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 2
+##🎉 FuzzyPN
+
+    💠 Yunaka:
+        type: file
+        path: ./run/Sv3.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 2
+##💠 Yunaka
+
+    ⛽ Qthang:
+        type: file
+        path: ./run/Sv4.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 2
+##⛽ Qthang
+
+    ⚔️ ShopVPN1:
+        type: file
+        path: ./run/Sv5.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 2
+##⚔️ ShopVPN1
+
+    🎯 ShopVPN2:
+        type: file
+        path: ./run/Sv6.yaml
+        health-check:
+            enable: true
+            url: http://www.gstatic.com/generate_204
+            interval: 2
+##🎯 ShopVPN2
+
