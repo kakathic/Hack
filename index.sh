@@ -27,7 +27,7 @@ $PHOME/scripts/service.sh
 fi
 else
 ecgi "€loading"
-Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_DIR/Test.zip"
+Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "$TEMP_DIR/Test.zip"
 [ -e "$TEMP_DIR/Test.zip" ] && unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module" || Thoat "Tải dữ liệu thất bại!"
 rm -fr "$TEMP_DIR"/*
 rm -fr $TOME/bin/Clash
