@@ -149,5 +149,10 @@ fi
 </page>
 </group>
 
+
+<text/>
+<text title="Thông tin" desc-sh="Xem https://raw.githubusercontent.com/kakathic/Hack/Proxy/README.md"/>
+
+
 </items>
 HiH
