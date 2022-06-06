@@ -59,6 +59,7 @@ rules:
 proxy-groups:
     - name: 🚀 Total
       type: select
+      disable-udp: true
       use:
           - 📲 Server
           - 🎯 Machine
@@ -74,7 +75,9 @@ proxy-groups:
           - 🎯 Machine
 #Themv
       url: 'http://www.gstatic.com/generate_204'
-      interval: 1
+      interval: 300
+      tolerance: 151
+      lazy: true
       filter: "🇻🇳|VN"
 
     - name: ☠️ Magic
@@ -85,7 +88,7 @@ proxy-groups:
 #Themv
       strategy: consistent-hashing # round-robin
       url: 'http://www.gstatic.com/generate_204'
-      interval: 1
+      interval: 300
       filter: "🇻🇳|VN"
 
 rule-providers:
