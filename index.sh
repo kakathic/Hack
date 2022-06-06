@@ -10,7 +10,7 @@ cat << HiH | sed2
 <option reload="true" auto-off="true" id="kk3" >Cập nhật config.yaml</option>
 <option type="default" id="kk2" reload="true" auto-off="true">Cập nhật toàn bộ</option>
 <option type="default" id="kk" >Nhật ký</option>
-<option type="default" auto-off="true" style="fab" icon="$TOME/usr/Tool/Loading.png" id="kk4" >$lammoi</option>
+<option type="default" reload="true" auto-off="true" style="fab" icon="$TOME/usr/Tool/Loading.png" id="kk4" >$lammoi</option>
 <handler>
 # Start code
 if [ "€menu_id" == "kk" ];then
