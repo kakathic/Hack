@@ -1,6 +1,5 @@
 #!/system/bin/sh
 
-magisk_busybox="/data/adb/magisk/busybox"
 tun_device="utun"
 Clash_data_dir="$TOME/Module/Hack-Proxy"
 Clash_bin_name="Clash"
@@ -46,7 +45,7 @@ start_clash() {
             ${Clash_bin_path} -t -d "$Clash_data_dir" > ${Clash_run_path}/error
             if [ "$?" = "0" ] ; then
                 ulimit -SHn 1000000
-                nohup ${magisk_busybox} setuidgid 0:3005 ${Clash_bin_path} -d "$Clash_data_dir" > ${Clash_logs_file} 2>&1 &
+                nohup setuidgid 0:3005 ${Clash_bin_path} -d "$Clash_data_dir" > ${Clash_logs_file} 2>&1 &
                 echo -n $! > ${Clash_pid_file}
                 echo "Info: Kernel Clash đã bắt đầu." >> ${CFM_logs_file}
                 iptables -I FORWARD -o ${tun_device} -j ACCEPT
