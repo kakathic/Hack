@@ -35,12 +35,12 @@ rm -fr $PHOME/Clash
 rm -fr $PHOME/GeoSite.dat
 
 Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
+unzip -o "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" "$PHOME/GeoSite.dat"
 Linkhhf="€(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
 Taive "https://github.com€Linkhhf" "$TEMP_DIR/Clash.gz"
 gzip -d "$TEMP_DIR/Clash.gz"
 mv -f "$TEMP_DIR/Clash" $PHOME/Clash
-unzip -o "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 chmod -R 777 "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
