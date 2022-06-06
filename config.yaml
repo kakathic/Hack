@@ -106,7 +106,8 @@ proxy-providers:
             interval: 2
 
     🎯 Machine:
-        type: file
+        type: http
+        url: https://raw.githubusercontent.com/kakathic/Hack/Proxy/run/Add.yaml
         path: ./run/Add.yaml
         health-check:
             enable: true
