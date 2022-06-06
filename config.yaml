@@ -14,7 +14,7 @@ ebpf:
     - Meta
 
 unified-delay: true
-geodata-mode: false
+geodata-mode: true
 skip-cert-verify: true
 tcp-concurrent: true
 enable-process: true
