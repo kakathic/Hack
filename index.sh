@@ -33,7 +33,7 @@ Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_D
 rm -fr $PHOME/yacd-gh-pages
 rm -fr $PHOME/Clash
 rm -fr $PHOME/GeoSite.dat
-
+Taive "https://raw.githubusercontent.com/Qiu2zhi1zhe3/anti-ad/main/anti-ad.yaml" "$PHOME/run/anti-ad.yaml"
 Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
 unzip -o "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" "$PHOME/GeoSite.dat"
