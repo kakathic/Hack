@@ -7,20 +7,6 @@ mkdir -p /data/adb/service.d
 cp -rf $PHOME/Hack-Proxy.sh /data/adb/service.d 2>/dev/null
 fi
 
-if [ ! -e $PHOME/yacd-gh-pages ];then
-Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$PHOME/Testvg.zip"
-unzip -qo "$PHOME/Testvg.zip" -d "$PHOME"
-rm -fr "$PHOME/Testvg.zip"
-fi
-
-if [ ! -e "$CLASH" ];then
-Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64' | cut -d \" -f2)"
-Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" "$PHOME/GeoSite.dat"
-Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
-gzip -d "$TEMP_DIR/Clash.gz"
-mv -f "$TEMP_DIR/Clash" $PHOME/Clash
-chmod -R 777 "$PHOME"
-fi
 
 if [ ! -e $PHOME/run/Vip.yaml ];then
 mkdir -p "$PHOME/run"
@@ -118,8 +104,8 @@ fi
 
 <group>
 <action shell="hidden" reload="true" title="Tùy chọn" desc="Tổng hợp các tùy chọn nhanh" >
-<param name="Luachokhb" desc=" " label="Chế độ" value-sh="grep -m1 mode: $PHOME/config.yaml | cut -d : -f2" option-sh="echo rule; echo global; echo direct; echo script;"/>
-<param name="ksjdbdjdj" desc=" " label="Hệ thống" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo system; echo gvisor;"/>
+<param name="Luachokhb" desc=" " label="Chế độ" value-sh="grep -m1 mode: $PHOME/config.yaml | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct; echo Script;"/>
+<param name="ksjdbdjdj" desc=" " label="Hệ thống" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo System; echo gVisor;"/>
 <param name="eheheb" desc=" " label="Nhật ký" value-sh="grep -m1 log-level: $PHOME/config.yaml | cut -d : -f2" option-sh="echo silent; echo info; echo warning; echo error; echo debug;"/>
 <param name="sjdjdh" value-sh="grep -m1 filter: $PHOME/config.yaml | cut -d \&quot; -f2" type="text" desc="£Điền tên cần lọc ở sever Auto, Magic, bỏ trống để hủy lọc££Mặc định: 🇻🇳|VN£" label="Lọc tên"/>
 <param name="bsbeh4j" desc=" " label="Chặn QC" value-sh="test $(grep -cm1 '#  - RULE-SET,anti-ad,REJECT' $PHOME/config.yaml) == 1 && echo 0 || echo 1" type="switch"/>
