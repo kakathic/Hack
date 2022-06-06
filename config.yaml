@@ -19,11 +19,12 @@ ebpf:
   redirect-to-tun:
     - Meta
 
+enable-process: true
 unified-delay: true
 geodata-mode: true
 skip-cert-verify: true
 tcp-concurrent: true
-enable-process: true
+
 
 sniffer:
   enable: false
@@ -35,8 +36,8 @@ tun:
   enable: true
   device: Meta
   stack: system
-  dns-hijack:
-    - any:53
+#  dns-hijack:
+#    - any:53
   auto-route: true
   auto-detect-interface: true
 
@@ -61,7 +62,7 @@ proxy-groups:
       type: select
       disable-udp: true
       use:
-          - 🥏 Server
+          - 🎴 Server
           - 🛩️ Machine
       proxies:
           - 📣 Auto
@@ -71,7 +72,7 @@ proxy-groups:
     - name: "📣 Auto"
       type: url-test
       use:
-          - 🥏 Server
+          - 🎴 Server
           - 🛩️ Machine
 #Themv
       url: 'http://www.gstatic.com/generate_204'
@@ -83,7 +84,7 @@ proxy-groups:
     - name: 🎩 Magic
       type: load-balance
       use:
-          - 🥏 Server
+          - 🎴 Server
           - 🛩️ Machine
 #Themv
       strategy: sticky-sessions # consistent-hashing # round-robin
@@ -102,7 +103,7 @@ rule-providers:
         interval: 10000
 
 proxy-providers:
-    🥏 Server:
+    🎴 Server:
         type: file
         path: ./run/Vip.yaml
         health-check:
