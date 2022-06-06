@@ -1,6 +1,5 @@
 # Path
 PHOME="$TOME/Module/Hack-Proxy"
-CLASH=$PHOME/Clash
 
 if [ ! -e /data/adb/service.d/Hack-Proxy.sh ];then
 mkdir -p /data/adb/service.d
@@ -26,12 +25,11 @@ fi
 [ -e "$PHOME/GeoIP.dat" ] || Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" "$PHOME/GeoIP.dat"
 [ -e "$PHOME/Country.mmdb" ] || Taive "https://github.com/Loyalsoldier/geoip/releases/latest/download/Country-only-cn-private.mmdb" "$PHOME/Country.mmdb"
 
-if [ ! -e $PHOME/Clash ];then
+if [ ! -e $TOME/bin/Clash ];then
 Linkhhf="€(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
 Taive "https://github.com€Linkhhf" "$TEMP_DIR/Clash.gz"
 gzip -d "$TEMP_DIR/Clash.gz"
-mv -f "$TEMP_DIR/Clash" $PHOME/Clash
-chmod -R 777 "$PHOME"
+mv -f "$TEMP_DIR/Clash" $TOME/bin/Clash
 fi
 
 cat << HiH | sed2
@@ -39,7 +37,7 @@ cat << HiH | sed2
 <items>
 
 <text/>
-<text title="Phiên bản" desc-sh="$CLASH -v;echo; cat $PHOME/run/error;echo"/>
+<text title="Phiên bản" desc-sh="Clash -v;echo; cat $PHOME/run/error;echo"/>
 
 
 <group>
