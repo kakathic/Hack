@@ -16,7 +16,6 @@ cat << HiH | sed2
 if [ "€menu_id" == "kk" ];then
 cat $PHOME/run/kernel.log
 elif [ "€menu_id" == "kk4" ];then
-[ "€(Xem "http://ip-api.com/csv/?fields=countryCode")" == "VN" ] || Thoat "Vui lòng chọn Sever Việt Nam hoặc chọn sever Việt Nam khác" >&amp;2
 curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 elif [ "€menu_id" == "kk3" ];then
 Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $PHOME/config.yaml
