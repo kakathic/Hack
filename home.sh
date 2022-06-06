@@ -16,6 +16,8 @@ fi
 if [ ! -e "$CLASH" ];then
 [ "$(Xset jsdjdn)" == 1 ] && Ukrrr="https://github.com/MetaCubeX/Clash.Meta/releases/tag/v1.11.1" || Ukrrr="https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha"
 Linkhhf="$(Xem "$Ukrrr" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
+Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" "$PHOME/GeoSite.dat"
+
 Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
 gzip -d "$TEMP_DIR/Clash.gz"
 mv -f "$TEMP_DIR/Clash" $PHOME/Clash

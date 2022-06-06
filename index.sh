@@ -32,6 +32,7 @@ Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_D
 rm -fr "€TEMP_DIR"/*
 rm -fr $PHOME/yacd-gh-pages
 rm -fr $PHOME/Clash
+rm -fr $PHOME/GeoSite.dat
 fi
 # End code
 </handler></page></group>
