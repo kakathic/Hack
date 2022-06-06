@@ -1,6 +1,6 @@
 allow-lan: true
 ipv6: false
-mode: Rule
+mode: rule
 udp: true
 log-level: silent 
 external-controller: 127.0.0.1:9090
@@ -28,7 +28,7 @@ profile:
 tun:
   enable: true
   device: Meta
-  stack: System
+  stack: system
   dns-hijack:
     - any:53
   auto-route: true
