@@ -54,25 +54,25 @@ dns:
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - RULE-SET,anti-ad,REJECT
-  - MATCH,🚀 Total
+  - MATCH,⛩️ Total
 
 proxy-groups:
-    - name: 🚀 Total
+    - name: ⛩️ Total
       type: select
       disable-udp: true
       use:
-          - 🛰️ Server
-          - 🎀 Machine
+          - 🥏 Server
+          - 🛩️ Machine
       proxies:
-          - 📢 Auto
-          - ☠️ Magic
+          - 📣 Auto
+          - 🎩 Magic
 #Themv
 
-    - name: "📢 Auto"
+    - name: "📣 Auto"
       type: url-test
       use:
-          - 🛰️ Server
-          - 🎀 Machine
+          - 🥏 Server
+          - 🛩️ Machine
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 300
@@ -80,11 +80,11 @@ proxy-groups:
       lazy: true
       filter: "🇻🇳|VN"
 
-    - name: ☠️ Magic
+    - name: 🎩 Magic
       type: load-balance
       use:
-          - 🛰️ Server
-          - 🎀 Machine
+          - 🥏 Server
+          - 🛩️ Machine
 #Themv
       strategy: sticky-sessions # consistent-hashing # round-robin
       url: 'http://www.gstatic.com/generate_204'
@@ -102,7 +102,7 @@ rule-providers:
         interval: 10000
 
 proxy-providers:
-    🛰️ Server:
+    🥏 Server:
         type: file
         path: ./run/Vip.yaml
         health-check:
@@ -110,7 +110,7 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
             interval: 2
 
-    🎀 Machine:
+    🛩️ Machine:
         type: http
         url: https://raw.githubusercontent.com/kakathic/Hack/Proxy/run/Add.yaml
         path: ./run/Add.yaml
