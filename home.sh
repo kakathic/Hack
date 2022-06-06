@@ -84,7 +84,7 @@ echo "
 " >> "$PHOME/config.yaml"
 sed -i "s/#Themv/          - €Tensv\n#Themv/g" "$PHOME/config.yaml"
 fi
-
+curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 </set>
 </action>
 </group>
@@ -96,6 +96,7 @@ fi
 if [ "€Xsv" ];then
 Took="€(echo "€Xsv" | sed -e 's| 🎫||g' -e 's| 🎟️||g')"
 [ "€(echo "€Xsv" | grep -cm1 '🎫')" == 1 ] && sed -i -e "/#€Took/,/##€Took/d" -e '/^$/d' "$PHOME/run/Vip.yaml" || sed -i -e "/- €Took/d" -e "/€Took/,/##€Took/d" -e '/^$/d' "$PHOME/config.yaml"
+curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 fi
 </set>
 </action>
