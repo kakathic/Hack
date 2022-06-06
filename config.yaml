@@ -76,7 +76,7 @@ proxy-groups:
 #Themv
       url: 'http://www.gstatic.com/generate_204'
       interval: 300
-      tolerance: 151
+      tolerance: 150
       lazy: true
       filter: "🇻🇳|VN"
 
