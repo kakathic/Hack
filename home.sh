@@ -153,8 +153,9 @@ fi
 
 
 <text/>
-<text title="Thông tin" desc="$onsbhd"/>
-
+<text title="Thông tin" >
+<desc>$onsbhd</desc>
+</text>
 
 </items>
 HiH
