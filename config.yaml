@@ -78,7 +78,7 @@ proxy-groups:
           - 🌊 FuzzyNG
 #Themv
       url: 'http://www.gstatic.com/generate_204'
-      interval: 150
+      interval: 1
       filter: "🇻🇳|VN"
 
     - name: ☠️ Magic
@@ -94,7 +94,7 @@ proxy-groups:
 #Themv
       strategy: consistent-hashing # round-robin
       url: 'http://www.gstatic.com/generate_204'
-      interval: 300
+      interval: 1
       filter: "🇻🇳|VN"
 
 rule-providers:
