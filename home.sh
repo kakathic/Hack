@@ -122,7 +122,7 @@ fi
 <action shell="hidden" reload="true" title="Tùy chọn" desc="Tổng hợp các tùy chọn nhanh" >
 <param name="Luachokhb" desc=" " label="Chế độ" value-sh="grep -m1 mode: $PHOME/config.yaml | cut -d : -f2" option-sh="echo Rule; echo Global; echo Direct; echo Script;"/>
 <param name="ksjdbdjdj" desc=" " label="Hệ thống" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo System; echo gVisor;"/>
-<param name="eheheb" desc=" " label="Nhật ký" value-sh="grep -m1 log-level: $PHOME/config.yaml | cut -d : -f2" option-sh="echo Silent; echo Info; echo Warning; echo Error; echo Debug;"/>
+<param name="eheheb" desc=" " label="Nhật ký" value-sh="grep -m1 log-level: $PHOME/config.yaml | cut -d : -f2" option-sh="echo silent; echo info; echo warning; echo error; echo debug;"/>
 <param name="sjdjdh" value-sh="grep -m1 filter: $PHOME/config.yaml | cut -d \&quot; -f2" type="text" desc="£Điền tên cần lọc ở sever Auto, Magic, bỏ trống để hủy lọc££Mặc định: 🇻🇳|VN£" label="Lọc tên"/>
 <param name="bsbeh4j" desc=" " label="Chặn QC" value-sh="test $(grep -cm1 '#  - RULE-SET,anti-ad,REJECT' $PHOME/config.yaml) == 1 && echo 0 || echo 1" type="switch"/>
 <param name="jsdjdn" label="Bản chính thức" desc="£Sử dụng Calsh phiên bản chính thức" value-sh="Xset jsdjdn" type="bool"/>
