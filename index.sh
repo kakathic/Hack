@@ -30,9 +30,6 @@ ecgi "€loading"
 Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "€TEMP_DIR/Test.zip"
 [ -e "$TEMP_DIR/Test.zip" ] && unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module" || Thoat "Tải dữ liệu thất bại!"
 
-rm -fr $PHOME/yacd-gh-pages
-rm -fr $PHOME/Clash
-rm -fr $PHOME/GeoSite.dat
 Taive "https://raw.githubusercontent.com/Qiu2zhi1zhe3/anti-ad/main/anti-ad.yaml" "$PHOME/run/anti-ad.yaml"
 Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
 unzip -o "$TEMP_DIR/Testvg.zip" -d "$PHOME"
