@@ -40,7 +40,6 @@ start_clash() {
     fi
     if [ -f "${Clash_bin_path}" ] ; then
         if [ -f ${Clash_config_file} ] ; then
-            chmod 0777 ${Clash_bin_path}
             Clash -t -d "$Clash_data_dir" > ${Clash_run_path}/error
             if [ "$?" = "0" ] ; then
                 ulimit -SHn 1000000
