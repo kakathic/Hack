@@ -1,4 +1,9 @@
+port: 8089
+socks-port: 1080
+redir-port: 7892
 tproxy-port: 7893
+mixed-port: 7890
+
 allow-lan: true
 ipv6: false
 mode: rule
