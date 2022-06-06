@@ -1,3 +1,4 @@
+tproxy-port: 7893
 allow-lan: true
 ipv6: false
 mode: rule
