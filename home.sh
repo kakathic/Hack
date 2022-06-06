@@ -7,9 +7,6 @@ mkdir -p /data/adb/service.d
 cp -rf $PHOME/Hack-Proxy.sh /data/adb/service.d 2>/dev/null
 fi
 
-Thongtinkkdh="$(timeout 1 Xem https://raw.githubusercontent.com/kakathic/Hack/Proxy/README.md)"
-[ "$Thongtinkkdh" ] && onsbhd="$Thongtinkkdh" || onsbhd="Vui lòng bật kết nối internet!£Hoặc bật Wi-fi!"
-
 if [ ! -e $PHOME/run/Vip.yaml ];then
 mkdir -p "$PHOME/run"
 echo 'proxies:
@@ -153,8 +150,8 @@ fi
 
 
 <text/>
-<text title="Thông tin" >
-<desc>$onsbhd</desc>
+<text >
+<desc>$(cat $PHOME/README.md)</desc>
 </text>
 
 </items>
