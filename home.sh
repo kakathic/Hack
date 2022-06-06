@@ -30,6 +30,7 @@ Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-
 Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
 gzip -d "$TEMP_DIR/Clash.gz"
 mv -f "$TEMP_DIR/Clash" $TOME/bin/Clash
+chmod 0777 $TOME/bin/Clash
 fi
 
 cat << HiH | sed2
