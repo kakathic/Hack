@@ -14,7 +14,8 @@ rm -fr "$PHOME/Testvg.zip"
 fi
 
 if [ ! -e "$CLASH" ];then
-Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
+[ "$(Xset jsdjdn)" == 1 ] && Ukrrr="https://github.com/MetaCubeX/Clash.Meta/releases/tag/v1.11.1" || Ukrrr="https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha"
+Linkhhf="$(Xem "$Ukrrr" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
 Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
 gzip -d "$TEMP_DIR/Clash.gz"
 mv -f "$TEMP_DIR/Clash" $PHOME/Clash
@@ -121,13 +122,15 @@ fi
 <param name="ksjdbdjdj" desc=" " label="Hệ thống" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo System; echo gVisor;"/>
 <param name="eheheb" desc=" " label="Nhật ký" value-sh="grep -m1 log-level: $PHOME/config.yaml | cut -d : -f2" option-sh="echo Silent; echo Info; echo Warning; echo Error; echo Debug;"/>
 <param name="sjdjdh" value-sh="grep -m1 filter: $PHOME/config.yaml | cut -d \&quot; -f2" type="text" desc="Điền tên cần lọc ở sever Auto, Magic, bỏ trống để hủy lọc£" label="Lọc tên" required="required" />
-<param name="bsbeh4j" label="Chặn QC" value-sh="test $(grep -cm1 '#  - RULE-SET,anti-ad,REJECT' $PHOME/config.yaml) == 1 && echo 0 || echo 1" type="switch"/>
+<param name="bsbeh4j" desc=" " label="Chặn QC" value-sh="test $(grep -cm1 '#  - RULE-SET,anti-ad,REJECT' $PHOME/config.yaml) == 1 && echo 0 || echo 1" type="switch"/>
+<param name="jsdjdn" label="Bản chính thức" desc="Sử dụng Calsh phiên bản chính thức" value-sh="Xset jsdjdn" type="bool"/>
 <set>
 [ "€Luachokhb" ] && sed -i -e "s/€(grep -m1 mode: $PHOME/config.yaml)/mode: €Luachokhb/g" "$PHOME/config.yaml"
 [ "€ksjdbdjdj" ] && sed -i -e "s/€(grep -m1 stack: $PHOME/config.yaml)/  stack: €ksjdbdjdj/g" "$PHOME/config.yaml"
 [ "€eheheb" ] && sed -i -e "s/€(grep -m1 log-level: $PHOME/config.yaml)/log-level: €eheheb/g" "$PHOME/config.yaml"
 [ "€bsbeh4j" ] && sed -i -e "s/€(grep -m1 '- RULE-SET,anti-ad,REJECT' $PHOME/config.yaml)/  - RULE-SET,anti-ad,REJECT/g" "$PHOME/config.yaml" || sed -i -e "s/€(grep -m1 '- RULE-SET,anti-ad,REJECT' $PHOME/config.yaml)/#  - RULE-SET,anti-ad,REJECT/g" "$PHOME/config.yaml"
-[ "€sjdjdh" ] && sed -i -e "s/€(grep -m1 filter: $PHOME/config.yaml)/      filter: \"€sjdjdh\"/g" "$PHOME/config.yaml" || sed -i -e "s/€(grep -m1 filter: $PHOME/config.yaml)/#      filter: \"€sjdjdh\"/g" "$PHOME/config.yaml" 
+[ "€sjdjdh" ] && sed -i -e "s/€(grep -m1 filter: $PHOME/config.yaml)/      filter: \"€sjdjdh\"/g" "$PHOME/config.yaml" || sed -i -e "s/€(grep -m1 filter: $PHOME/config.yaml)/#      filter: \"€sjdjdh\"/g" "$PHOME/config.yaml"
+Tset jsdjdn €jsdjdn
 </set>
 </action>
 
