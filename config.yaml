@@ -5,9 +5,9 @@ tproxy-port: 7893
 mixed-port: 7890
 
 allow-lan: true
-ipv6: false
+ipv6: true
 mode: rule
-udp: true
+udp: false
 log-level: silent 
 external-controller: 127.0.0.1:9090
 external-ui: yacd-gh-pages
@@ -19,15 +19,13 @@ ebpf:
   redirect-to-tun:
     - Meta
 
-enable-process: true
 unified-delay: true
 geodata-mode: false
-skip-cert-verify: true
-tcp-concurrent: true
-
+tcp-concurrent: false
 
 sniffer:
   enable: false
+
 profile:
   store-selected: true
   store-fake-ip: true
@@ -36,14 +34,14 @@ tun:
   enable: true
   device: Meta
   stack: system
-#  dns-hijack:
-#    - any:53
+  dns-hijack:
+    - any:53
   auto-route: true
   auto-detect-interface: true
 
 dns:
   enable: true
-  ipv6: false
+  ipv6: true
   use-hosts: true
   listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
