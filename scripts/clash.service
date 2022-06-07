@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-tun_device="utun"
+tun_device="Meta"
 Clash_data_dir="$TOME/Module/Hack-Proxy"
 Clash_bin_path="$TOME/bin/Clash"
 Clash_run_path="${Clash_data_dir}/run"
@@ -8,7 +8,6 @@ Clash_config_file="${Clash_data_dir}/config.yaml"
 Clash_pid_file="${Clash_run_path}/clash.pid"
 CFM_logs_file="${Clash_run_path}/run.log"
 Clash_logs_file="${Clash_run_path}/kernel.log"
-Clash_tun_status=$(awk -F ': ' '/^tun: *$/{getline; print $2}' ${Clash_config_file})
 
 mkdir -p /dev/net
 [ ! -L /dev/net/tun ] && ln -s /dev/tun /dev/net/tun
@@ -48,11 +47,6 @@ start_clash() {
                 echo "Info: Kernel Clash đã bắt đầu." >> ${CFM_logs_file}
                 iptables -I FORWARD -o ${tun_device} -j ACCEPT
                 iptables -I FORWARD -i ${tun_device} -j ACCEPT                          
-                if [ "${Clash_tun_status}" == "false" ]; then
-              ${Clash_data_dir}/scripts/clash.tproxy -s
-        echo "Info: Dùng tproxy." >> ${CFM_logs_file}
-        echo "Info: iptables quy tắc được kích hoạt." >> ${CFM_logs_file}
-            fi
                 rm -f ${Clash_run_path}/error
             else
                echo "Err: Kiểm tra tệp cấu hình không thành công!" >> ${CFM_logs_file}
@@ -75,10 +69,6 @@ stop_clash() {
     iptables -D FORWARD -o ${tun_device} -j ACCEPT	
 	iptables -D FORWARD -i ${tun_device} -j ACCEPT
 	echo "Info: Ngừng Clash Kernel." >> ${CFM_logs_file}
-	      if [ "${Clash_tun_status}" == "false" ]; then
-	${Clash_data_dir}/scripts/clash.tproxy -k
-	echo "Info: iptables quy tắc bị xóa." >> ${CFM_logs_file}
-	fi
 }
 
 while getopts ":sk" signal ; do
