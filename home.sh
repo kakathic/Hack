@@ -71,9 +71,8 @@ echo "#€Tensv
 # €Durl
   - { name: \"€Tensv\", type: trojan, server: €(echo €Durl | cut -d @ -f2 | cut -d : -f1), port: 443, password: €(echo €Durl | cut -d / -f3 | cut -d @ -f1), sni: v.akamaized.net }
 ##€Tensv" >> $PHOME/run/Vip.yaml
-elif [ €Durl ];then
+elif [ "€Durl" ];then
 echo "
-#€Tensv
     €Tensv:
         type: http
         url: "€Durl"
@@ -89,7 +88,6 @@ else
 KKFi="€(date +"%H_%M_%S")_€RANDOM.yaml"
 cp -rf "€Ffile" "$PHOME/run/€KKFi"
 echo "
-#€Tensv
     €Tensv:
         type: file
         path: ./run/€KKFi
