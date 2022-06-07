@@ -15,6 +15,7 @@ external-ui: yacd-gh-pages
 bind-address: '*'
 interface-name: Meta
 routing-mark: 6666
+
 ebpf:
   redirect-to-tun:
     - Meta
@@ -44,8 +45,10 @@ dns:
   ipv6: true
   use-hosts: true
   listen: 0.0.0.0:1053
+
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
+
   default-nameserver:
         - 8.8.8.8
         - 1.1.1.1
@@ -55,6 +58,8 @@ dns:
         - https://dns.google/dns-query
         - https://cloudflare-dns.com/dns-query
         - dhcp://Meta
+  fallback-filter:
+       geoip: true
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - RULE-SET,anti-ad,REJECT
