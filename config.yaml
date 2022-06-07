@@ -109,7 +109,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 2
+            interval: 300
 
     🛩️ Machine:
         type: http
@@ -118,5 +118,5 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 2
+            interval: 300
 
