@@ -5,7 +5,7 @@ udp: true
 log-level: silent
 external-controller: 127.0.0.1:9090
 external-ui: yacd-gh-pages
-tproxy-port: 7893
+
 bind-address: '*'
 interface-name: Meta
 routing-mark: 6666
