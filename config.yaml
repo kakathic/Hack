@@ -63,7 +63,6 @@ rules:
 proxy-groups:
     - name: ⛩️ Total
       type: select
-      disable-udp: true
       use:
           - 🎴 Server
           - 🛩️ Machine
