@@ -31,6 +31,7 @@ Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "$TEMP_DIR
 rm -fr "$TEMP_DIR"/*
 rm -fr $TOME/bin/Clash
 rm -fr $PHOME/yacd-gh-pages
+chmod -R 777 $PHOME
 fi
 # End code
 </handler></page></group>
