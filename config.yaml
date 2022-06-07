@@ -51,13 +51,14 @@ rules:
 proxy-groups:
     - name: ⛩️ Total
       type: select
-      use:
-          - 🎴 Server
-          - 🛩️ Machine
       proxies:
           - 📣 Auto
           - 🎩 Magic
+      use:
+          - 🎴 Server
+          - 🛩️ Machine
 #Themv
+
 
     - name: "📣 Auto"
       type: url-test
