@@ -49,7 +49,12 @@ dns:
   default-nameserver:
         - 8.8.8.8
         - 1.1.1.1
-
+  nameserver:
+        - 8.8.8.8
+        - 1.1.1.1
+        - https://dns.google/dns-query
+        - https://cloudflare-dns.com/dns-query
+        - dhcp://Meta
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - RULE-SET,anti-ad,REJECT
