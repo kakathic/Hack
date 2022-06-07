@@ -63,7 +63,7 @@ start_clash() {
         exit 1
     fi
 }
-
+ 
 stop_clash() {
     kill -15 `cat ${Clash_pid_file}`
     rm ${CFM_logs_file} 2>/dev/null
