@@ -10,13 +10,9 @@ bind-address: '*'
 interface-name: Meta
 routing-mark: 6666
 
-ebpf:
-  redirect-to-tun:
-    - Meta
-
 unified-delay: true
 geodata-mode: false
-tcp-concurrent: false
+tcp-concurrent: true
 
 sniffer:
   enable: false
