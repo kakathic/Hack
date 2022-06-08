@@ -21,10 +21,6 @@ unzip -qo "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
 
-#[ -e "$PHOME/GeoSite.dat" ] || Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" "$PHOME/GeoSite.dat"
-#[ -e "$PHOME/GeoIP.dat" ] || Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" "$PHOME/GeoIP.dat"
-[ -e "$PHOME/Country.mmdb" ] || Taive "https://github.com/Loyalsoldier/geoip/releases/latest/download/Country-only-cn-private.mmdb" "$PHOME/Country.mmdb"
-
 [ -e $PHOME/Clash ] && mv -f $PHOME/Clash $TOME/bin/Clash
 
 cat << HiH | sed2
