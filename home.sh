@@ -9,6 +9,7 @@ echo 'proxies:
 ##🇭🇰 4G HK iamtayky' > $PHOME/run/Vip.yaml
 fi
 
+
 if [ "$(Xem "http://127.0.0.1:9090/configs" | grep -cm1 'allow-lan')" == 1 ];then
 curl -s --connect-timeout 2 -X PUT -H "Content-Type: application/json" -d '{"path": "'$PHOME'/config.yaml"}' http://127.0.0.1:9090/configs >/dev/null
 fi
@@ -20,17 +21,11 @@ unzip -qo "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
 
-[ -e "$PHOME/GeoSite.dat" ] || Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" "$PHOME/GeoSite.dat"
-[ -e "$PHOME/GeoIP.dat" ] || Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" "$PHOME/GeoIP.dat"
+#[ -e "$PHOME/GeoSite.dat" ] || Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" "$PHOME/GeoSite.dat"
+#[ -e "$PHOME/GeoIP.dat" ] || Taive "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" "$PHOME/GeoIP.dat"
 [ -e "$PHOME/Country.mmdb" ] || Taive "https://github.com/Loyalsoldier/geoip/releases/latest/download/Country-only-cn-private.mmdb" "$PHOME/Country.mmdb"
 
-if [ ! -e $TOME/bin/Clash ];then
-Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
-Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
-gzip -d "$TEMP_DIR/Clash.gz"
-mv -f "$TEMP_DIR/Clash" $TOME/bin/Clash
-chmod 0777 $TOME/bin/Clash
-fi
+[ -e $PHOME/Clash ] && mv -f $PHOME/Clash $TOME/bin/Clash
 
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
