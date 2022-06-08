@@ -8,7 +8,7 @@ echo 'proxies:
   - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 443, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: { path: /, headers: { Host: iamtayky.akamaized.net } } }
 ##🇭🇰 4G HK iamtayky
 #🇻🇳 SV VN
-  - { name: "bdnfn", type: vmess, server: 159.223.48.47, uuid: 751b7ae2-49b3-4950-97a2-145f2ab7a228, port: 80, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: { path: "/", headers: { Host: v.akamaized.net } } }
+  - { name: "🇻🇳 SV VN", type: vmess, server: 159.223.48.47, uuid: 751b7ae2-49b3-4950-97a2-145f2ab7a228, port: 80, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: { path: "/", headers: { Host: v.akamaized.net } } }
 ##🇻🇳 SV VN' > $PHOME/run/Vip.yaml
 fi
 
