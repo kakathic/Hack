@@ -6,9 +6,11 @@ mkdir -p "$PHOME/run"
 echo 'proxies:
 #🇭🇰 4G HK iamtayky
   - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 443, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: { path: /, headers: { Host: iamtayky.akamaized.net } } }
-##🇭🇰 4G HK iamtayky' > $PHOME/run/Vip.yaml
+##🇭🇰 4G HK iamtayky
+#🇻🇳 SV VN
+  - { name: "bdnfn", type: vmess, server: 159.223.48.47, uuid: 751b7ae2-49b3-4950-97a2-145f2ab7a228, port: 80, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: { path: "/", headers: { Host: v.akamaized.net } } }
+##🇻🇳 SV VN' > $PHOME/run/Vip.yaml
 fi
-
 
 if [ "$(Xem "http://127.0.0.1:9090/configs" | grep -cm1 'allow-lan')" == 1 ];then
 curl -s --connect-timeout 2 -X PUT -H "Content-Type: application/json" -d '{"path": "'$PHOME'/config.yaml"}' http://127.0.0.1:9090/configs >/dev/null
@@ -21,7 +23,13 @@ unzip -qo "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
 
-[ -e $PHOME/Clash ] && mv -f $PHOME/Clash $TOME/bin/Clash
+if [ ! -e $TOME/bin/Clash ];then
+Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
+Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
+gzip -d "$TEMP_DIR/Clash.gz"
+mv -f "$TEMP_DIR/Clash" $TOME/bin/Clash
+chmod 0777 $TOME/bin/Clash
+fi
 
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
