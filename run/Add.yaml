@@ -88,3 +88,5 @@ proxies:
     - { name: '🇻🇳 HCM Nix 5', type: vmess, server: hcmn5.sos4g.xyz, port: 80, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /sos4g.xyz, headers: { Host: tv.akamaized.net } } }
     - { name: '🇻🇳VIP  HNG 4', type: vmess, server: 202.92.7.188, port: 80, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /sos4g.xyz, headers: { Host: sos.akamaized.net } } }
     - { name: '🇻🇳VIP  HNG 6', type: vmess, server: hn6.sos4g.xyz, port: 80, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /sos4g.xyz, headers: { Host: sos.akamaized.net } } }
+    - { name: "🇭🇰 4G HK iamtayky", server: 104.208.104.245, port: 443, type: vmess, uuid: a5f4f11a-0af5-4afe-fe44-27883a80d8be, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: { path: /, headers: { Host: iamtayky.akamaized.net } } }
+
