@@ -18,7 +18,8 @@ cat $PHOME/run/kernel.log
 elif [ "€menu_id" == "kk4" ];then
 curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 elif [ "€menu_id" == "kk3" ];then
-Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $PHOME/config.yaml
+Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $TEMP_DIR/config.yaml
+[ -e $TEMP_DIR/config.yaml ] && mv -f $TEMP_DIR/config.yaml $PHOME/config.yaml || Thoat "Cập nhật thất bại hãy kiểm tra lại mạng!"
 if [ -e $PHOME/run/clash.pid ];then
 $PHOME/scripts/service.sh
 echo
@@ -27,7 +28,7 @@ fi
 else
 ecgi "€loading"
 Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "$TEMP_DIR/Test.zip"
-[ -e "$TEMP_DIR/Test.zip" ] && unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module" || Thoat "Tải dữ liệu thất bại!"
+[ -e "$TEMP_DIR/Test.zip" ] && unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module" || Thoat "Cập nhật dữ liệu thất bại, vui lòng kiểm tra lại mạng!"
 rm -fr "$TEMP_DIR"/*
 rm -fr $TOME/bin/Clash
 rm -fr $PHOME/yacd-gh-pages
