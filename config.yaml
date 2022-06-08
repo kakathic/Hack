@@ -11,7 +11,7 @@ interface-name: Meta
 routing-mark: 6666
 
 unified-delay: true
-geodata-mode: true
+geodata-mode: false
 tcp-concurrent: false
 skip-cert-verify: true
 
