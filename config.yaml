@@ -13,7 +13,6 @@ routing-mark: 6666
 unified-delay: true
 geodata-mode: false
 tcp-concurrent: false
-skip-cert-verify: true
 
 sniffer:
   enable: false
