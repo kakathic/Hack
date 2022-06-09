@@ -68,7 +68,7 @@ stop_clash() {
     kill -15 `cat ${Clash_pid_file}`
     rm ${CFM_logs_file} 2>/dev/null
     rm -f ${Clash_pid_file}
-    #rm -f ${Clash_data_dir}/cache.db
+    rm -f ${Clash_data_dir}/cache.db
     iptables -w 100 -D FORWARD -o ${tun_device} -j ACCEPT	
 	iptables -w 100 -D FORWARD -i ${tun_device} -j ACCEPT
     ip6tables -w 100 -D FORWARD -o ${tun_device} -j ACCEPT	
