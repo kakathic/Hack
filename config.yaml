@@ -40,7 +40,6 @@ dns:
   fake-ip-range: 198.18.0.1/16
 
 rules:
-  - DOMAIN-SUFFIX,local,DIRECT
   - RULE-SET,Anti-ad,REJECT
   - MATCH,⛩️ Total
 
