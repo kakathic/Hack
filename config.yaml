@@ -12,7 +12,7 @@ interface-name: utun
 
 unified-delay: true
 geodata-mode: false
-tcp-concurrent: true
+tcp-concurrent: false
 
 sniffer:
   enable: false
