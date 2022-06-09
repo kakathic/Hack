@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-tun_device="Meta"
+tun_device="utun"
 Clash_data_dir="$TOME/Module/Hack-Proxy"
 Clash_bin_path="$TOME/bin/Clash"
 Clash_run_path="${Clash_data_dir}/run"
