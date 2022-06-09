@@ -19,11 +19,11 @@ elif [ "€menu_id" == "kk4" ];then
 curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 elif [ "€menu_id" == "kk3" ];then
 Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $TEMP_DIR/config.yaml
-[ -e $TEMP_DIR/config.yaml ] && mv -f $TEMP_DIR/config.yaml $PHOME/config.yaml || Thoat "Cập nhật thất bại hãy kiểm tra lại mạng!"
-if [ -e $PHOME/run/clash.pid ];then
+if [ -e $PHOME/run/clash.pid ] && [ -e $TEMP_DIR/config.yaml ];then
+mv -f $TEMP_DIR/config.yaml $PHOME/config.yaml || Thoat "Cập nhật thất bại hãy kiểm tra lại mạng!"
 $PHOME/scripts/service.sh
-echo
-$PHOME/scripts/service.sh
+sleep 2
+curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 fi
 else
 ecgi "€loading"
