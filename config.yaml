@@ -7,7 +7,7 @@ external-controller: 127.0.0.1:9090
 external-ui: yacd-gh-pages
 
 bind-address: '*'
-interface-name: Meta
+interface-name: utun
 routing-mark: 6666
 
 unified-delay: true
@@ -23,7 +23,7 @@ profile:
 
 tun:
   enable: true
-  device: Meta
+  device: utun
   stack: system
   dns-hijack:
     - any:53
