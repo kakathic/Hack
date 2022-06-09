@@ -6,9 +6,9 @@ log-level: silent
 external-controller: 127.0.0.1:9090
 external-ui: yacd-gh-pages
 
-#bind-address: '*'
+bind-address: '*'
 interface-name: utun
-#routing-mark: 6666
+routing-mark: 6666
 
 unified-delay: true
 geodata-mode: false
