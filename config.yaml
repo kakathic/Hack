@@ -11,8 +11,8 @@ interface-name: utun
 routing-mark: 6666
 
 unified-delay: true
-geodata-mode: false
-tcp-concurrent: true
+geodata-mode: true
+tcp-concurrent: false
 
 sniffer:
   enable: false
