@@ -35,18 +35,8 @@ dns:
   ipv6: false
   use-hosts: true
   listen: 0.0.0.0:1053
-
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-
-  default-nameserver:
-        - 8.8.8.8
-        - 1.1.1.1
-  nameserver:
-        - 8.8.8.8
-        - 1.1.1.1
-        - https://dns.google/dns-query
-        - https://cloudflare-dns.com/dns-query
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
