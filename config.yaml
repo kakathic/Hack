@@ -10,7 +10,7 @@ bind-address: '*'
 interface-name: utun
 routing-mark: 6666
 
-unified-delay: false
+unified-delay: true
 geodata-mode: false
 tcp-concurrent: false
 
