@@ -63,7 +63,7 @@ proxy-groups:
           - 🛩️ Machine
 #Themv
       url: 'http://www.gstatic.com/generate_204'
-      interval: 300
+      interval: 1
       #tolerance: 150
       #lazy: true
       filter: "🇻🇳|VN"
@@ -76,7 +76,7 @@ proxy-groups:
 #Themv
       strategy: sticky-sessions # consistent-hashing # round-robin
       url: 'http://www.gstatic.com/generate_204'
-      interval: 600
+      interval: 1
       #tolerance: 150
       #lazy: true
       filter: "🇻🇳|VN"
@@ -96,7 +96,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 300
+            interval: 1
 
     🛩️ Machine:
         type: http
@@ -106,5 +106,5 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 300
+            interval: 1
 
