@@ -13,7 +13,7 @@ unzip -qo "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
 
-[ -e $PHOME/Clash ] && mv $PHOME/Clash $TOME/bin/Clash
+[ -e $PHOME/Clash ] && mv -f $PHOME/Clash $TOME/bin/Clash
 
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
