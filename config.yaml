@@ -57,28 +57,28 @@ proxy-groups:
 
     - name: "📣 Auto"
       type: url-test
+      url: 'http://www.gstatic.com/generate_204'
+      interval: 300
+      #tolerance: 150
+      #lazy: true
+      filter: "🇻🇳|VN"
       use:
           - 🎴 Server
           - 🛩️ Machine
 #Themv
-      url: 'http://www.gstatic.com/generate_204'
-      interval: 1
-      #tolerance: 150
-      #lazy: true
-      filter: "🇻🇳|VN"
 
     - name: 🎩 Magic
       type: load-balance
+      strategy: consistent-hashing
+      url: 'http://www.gstatic.com/generate_204'
+      interval: 600
+      #tolerance: 150
+      #lazy: true
+      filter: "🇻🇳|VN"
       use:
           - 🎴 Server
           - 🛩️ Machine
 #Themv
-      strategy: sticky-sessions # consistent-hashing # round-robin
-      url: 'http://www.gstatic.com/generate_204'
-      interval: 1
-      #tolerance: 150
-      #lazy: true
-      filter: "🇻🇳|VN"
 
 rule-providers:
     Anti-ad:
@@ -95,7 +95,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 1
+            interval: 300
 
     🛩️ Machine:
         type: http
@@ -105,5 +105,5 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 1
+            interval: 300
 
