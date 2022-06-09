@@ -20,6 +20,7 @@ Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $TEMP_
 if [ -e $PHOME/run/clash.pid ] && [ -e $TEMP_DIR/config.yaml ];then
 mv -f $TEMP_DIR/config.yaml $PHOME/config.yaml || Thoat "Cập nhật thất bại hãy kiểm tra lại mạng!"
 $PHOME/scripts/service.sh
+echo
 $PHOME/scripts/service.sh
 sleep 2
 fi
