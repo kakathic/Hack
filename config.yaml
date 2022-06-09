@@ -27,7 +27,6 @@ tun:
   stack: system
   dns-hijack:
     - any:53
-    - tcp://any:53
   auto-route: true
   auto-detect-interface: true
 
@@ -58,7 +57,7 @@ proxy-groups:
     - name: "📣 Auto"
       type: url-test
       url: 'http://www.gstatic.com/generate_204'
-      interval: 300
+      interval: 1
       #tolerance: 150
       #lazy: true
       filter: "🇻🇳|VN"
@@ -71,7 +70,7 @@ proxy-groups:
       type: load-balance
       strategy: consistent-hashing
       url: 'http://www.gstatic.com/generate_204'
-      interval: 600
+      interval: 1
       #tolerance: 150
       #lazy: true
       filter: "🇻🇳|VN"
@@ -95,7 +94,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 300
+            interval: 1
 
     🛩️ Machine:
         type: http
@@ -105,5 +104,5 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 300
+            interval: 1
 
