@@ -10,11 +10,13 @@ cat << HiH | sed2
 <option reload="true" auto-off="true" id="kk3" >Cập nhật config.yaml</option>
 <option type="default" id="kk2" reload="true" auto-off="true">Cập nhật toàn bộ</option>
 <option type="default" id="kk" >Nhật ký</option>
-<option type="refresh" style="fab" icon="$TOME/usr/Tool/Loading.png" >$lammoi</option>
+<option type="default" reload="true" auto-off="true" style="fab" icon="$TOME/usr/Tool/Loading.png" id="kk4" >$lammoi</option>
 <handler>
 # Start code
 if [ "€menu_id" == "kk" ];then
 cat $PHOME/run/kernel.log
+elif [ "€menu_id" == "kk4" ];then
+curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 elif [ "€menu_id" == "kk3" ];then
 Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $TEMP_DIR/config.yaml
 if [ -e $PHOME/run/clash.pid ] && [ -e $TEMP_DIR/config.yaml ];then
