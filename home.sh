@@ -16,7 +16,8 @@ fi
 [ -e $PHOME/Clash ] && mv -f $PHOME/Clash $TOME/bin/Clash
 
 if [ "$(Xem "http://127.0.0.1:9090/configs" | grep -cm1 'allow-lan')" == 1 ];then
-curl -s --connect-timeout 2 -X PUT -H "Content-Type: application/json" -d '{"path": "'$PHOME'/config.yaml"}' http://127.0.0.1:9090/configs >/dev/null
+sleep 1
+curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "'$PHOME'/config.yaml"}' http://127.0.0.1:9090/configs >/dev/null
 fi
 
 cat << HiH | sed2
