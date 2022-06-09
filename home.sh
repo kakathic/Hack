@@ -52,7 +52,7 @@ Url () { echo "€Durl" | sed 's|vmess:\/\/||g' | base64 -d 2>/dev/null | sed -e
 [ €(echo "€(Url add)" | grep -cm1 'akamaized.net') == 1 ] && Tck="€(Url host)" || Tck="€(Url add)"
 echo "#€Tensv
 # €Durl
-  - { name: \"€Tensv\", type: vmess, server: €Tck, uuid: €(Url id), port: €(Url port), alterId: 0, cipher: auto, udp: true, tls: false, network: ws, ws-opts: { path: \"€(echo €(Url path))\", headers: { Host: v.akamaized.net } } }
+  - { name: \"€Tensv\", type: vmess, server: €Tck, uuid: €(Url id), port: €(Url port), alterId: 0, cipher: auto, skip-cert-verify: true, udp: true, tls: false, network: ws, ws-opts: { path: \"€(echo €(Url path))\", headers: { Host: v.akamaized.net } } }
 ##€Tensv" >> $PHOME/run/Vip.yaml
 elif [ €(echo €Durl | grep -cm1 'trojan:') == 1 ];then
 echo "#€Tensv
