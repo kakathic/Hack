@@ -2,7 +2,7 @@ allow-lan: true
 ipv6: true
 mode: rule
 udp: true
-log-level: silent
+log-level: debug
 external-controller: 127.0.0.1:9090
 external-ui: yacd-gh-pages
 
@@ -33,18 +33,16 @@ tun:
 
 dns:
   enable: true
-  ipv6: false
+  ipv6: true
   listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
 
 rules:
-  - RULE-SET,Anti-ad,REJECT
+  - RULE-SET,Anti-ad,GLOBAL
   - MATCH,⛩️ Total
-  - MATCH,🎩 Magic
-  - MATCH,📣 Auto
-
+  
 proxy-groups:
     - name: ⛩️ Total
       type: select
@@ -87,7 +85,6 @@ rule-providers:
         type: http
         url: "https://raw.githubusercontent.com/Qiu2zhi1zhe3/anti-ad/main/anti-ad.yaml"
         path: ./run/anti-ad.yaml
-        interval: 10000
 
 proxy-providers:
     🎴 Server:
@@ -96,7 +93,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 1
+            interval: 600
 
     🛩️ Machine:
         type: http
@@ -106,5 +103,5 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.gstatic.com/generate_204
-            interval: 1
+            interval: 600
 
