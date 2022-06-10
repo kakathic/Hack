@@ -26,21 +26,24 @@ tun:
   device: utun
   stack: system
   dns-hijack:
-    - any:53
+  - any:53
+  - tcp://any:53
   auto-route: true
   auto-detect-interface: true
 
 dns:
   enable: true
   ipv6: false
-  use-hosts: true
   listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
+  use-hosts: true
 
 rules:
   - RULE-SET,Anti-ad,REJECT
   - MATCH,⛩️ Total
+  - MATCH,🎩 Magic
+  - MATCH,📣 Auto
 
 proxy-groups:
     - name: ⛩️ Total
@@ -52,7 +55,6 @@ proxy-groups:
           - 🎴 Server
           - 🛩️ Machine
 #Themv
-
 
     - name: "📣 Auto"
       type: url-test
