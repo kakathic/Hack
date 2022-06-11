@@ -12,7 +12,7 @@ routing-mark: 6666
 
 unified-delay: true
 geodata-mode: true
-tcp-concurrent: true
+tcp-concurrent: false
 
 sniffer:
   enable: false
@@ -39,19 +39,30 @@ dns:
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
 
+  default-nameserver:
+  - 8.8.8.8
+  - 1.1.1.1
+  nameserver:
+  - 8.8.8.8
+  - 1.1.1.1
+  - https://dns.google/dns-query
+  - https://cloudflare-dns.com/dns-query
+
 rules:
   - RULE-SET,Anti-ad,GLOBAL
   - MATCH,⛩️ Total
-  
+  - MATCH,📣 Auto
+  - MATCH,🎩 Magic
+
 proxy-groups:
     - name: ⛩️ Total
       type: select
       proxies:
-          - 📣 Auto
-          - 🎩 Magic
+      - 📣 Auto
+      - 🎩 Magic
       use:
-          - 🎴 Server
-          - 🛩️ Machine
+      - 🎴 Server
+      - 🛩️ Machine
 #Themv
 
     - name: "📣 Auto"
@@ -62,8 +73,8 @@ proxy-groups:
       #lazy: true
       filter: "🇻🇳|VN"
       use:
-          - 🎴 Server
-          - 🛩️ Machine
+      - 🎴 Server
+      - 🛩️ Machine
 #Themv
 
     - name: 🎩 Magic
@@ -75,8 +86,8 @@ proxy-groups:
       #lazy: true
       filter: "🇻🇳|VN"
       use:
-          - 🎴 Server
-          - 🛩️ Machine
+      - 🎴 Server
+      - 🛩️ Machine
 #Themv
 
 rule-providers:
