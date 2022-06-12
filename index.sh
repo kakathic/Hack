@@ -21,10 +21,12 @@ elif [ "€menu_id" == "kk3" ];then
 Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $TEMP_DIR/config.yaml
 if [ -e $TEMP_DIR/config.yaml ];then
 mv -f $TEMP_DIR/config.yaml $PHOME/config.yaml
-[ -e $PHOME/run/clash.pid ] && $PHOME/scripts/service.sh
+if [ -e $PHOME/run/clash.pid ];then
+$PHOME/scripts/service.sh
 echo
-[ -e $PHOME/run/clash.pid ] && $PHOME/scripts/service.sh
+$PHOME/scripts/service.sh
 sleep 2
+fi
 else
 Thoat "Cập nhật thất bại hãy kiểm tra lại mạng!"
 fi
