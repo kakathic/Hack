@@ -4,6 +4,7 @@ mode: rule
 udp: true
 log-level: info
 external-controller: 127.0.0.1:9090
+external-ui: yacd-gh-pages
 
 bind-address: '*'
 interface-name: utun
