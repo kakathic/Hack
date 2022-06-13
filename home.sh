@@ -55,10 +55,9 @@ echo "#€Tensv
 # €Durl
   - { name: \"€Tensv\", type: vmess, server: €Tck, uuid: €(Url id), port: €(Url port), alterId: 0, cipher: auto, skip-cert-verify: true, udp: true, tls: false, network: ws, ws-opts: { path: \"€(echo €(Url path))\", headers: { Host: v.akamaized.net } } }
 ##€Tensv" >> $PHOME/run/Vip.yaml
-elif [ €(echo €Durl | grep -cm1 'trojan:') == 1 ];then
+elif [ €(echo €Durl | grep -cm1 'trojan:') == 1 ] || [ €(echo €Durl | grep -cm1 'ssr:') == 1 ] || [ €(echo €Durl | grep -cm1 'ss:') == 1 ];then
 echo "#€Tensv
-# €Durl
-  - { name: \"€Tensv\", type: trojan, server: €(echo €Durl | cut -d @ -f2 | cut -d : -f1), port: 443, password: €(echo €Durl | cut -d / -f3 | cut -d @ -f1), sni: v.akamaized.net }
+  €Durl
 ##€Tensv" >> $PHOME/run/Vip.yaml
 elif [ "€Durl" ];then
 echo "
