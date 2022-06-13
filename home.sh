@@ -121,7 +121,7 @@ curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.y
 
 
 <group>
-<page html="http://127.0.0.1:9090/ui/#/proxies">
+<page html="http://yacd.metacubex.one/#/proxies">
 <title>Web Ui</title>
 <desc>Lựa chọn các sever và các cài đặt khác</desc>
 </page>
