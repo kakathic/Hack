@@ -1,5 +1,5 @@
 allow-lan: true
-ipv6: true
+ipv6: false
 mode: rule
 udp: true
 log-level: info
@@ -33,7 +33,7 @@ tun:
 
 dns:
   enable: true
-  ipv6: true
+  ipv6: false
   listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
