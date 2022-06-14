@@ -71,7 +71,7 @@ proxy-groups:
       interval: 1
       #tolerance: 150
       #lazy: true
-      filter: "🇻🇳|VN"
+      filter: ""
       use:
       - 🎴 Server
       - 🛩️ Machine
@@ -84,7 +84,7 @@ proxy-groups:
       interval: 1
       #tolerance: 150
       #lazy: true
-      filter: "🇻🇳|VN"
+      filter: ""
       use:
       - 🎴 Server
       - 🛩️ Machine
