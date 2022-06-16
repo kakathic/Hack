@@ -24,7 +24,7 @@ profile:
 tun:
   enable: true
   device: utun
-  stack: system
+  stack: gvisor
   dns-hijack:
   - any:53
   - tcp://any:53
@@ -49,10 +49,14 @@ dns:
   - https://cloudflare-dns.com/dns-query
 
 rules:
+  - DOMAIN-SUFFIX,google.com,⛩️ Total
+  - DOMAIN-KEYWORD,google,⛩️ Total
+  - DOMAIN,google.com,⛩️ Total
   - RULE-SET,Anti-ad,GLOBAL
   - MATCH,⛩️ Total
   - MATCH,📣 Auto
   - MATCH,🎩 Magic
+  - MATCH,⛽ Fallback
 
 proxy-groups:
     - name: ⛩️ Total
@@ -60,6 +64,11 @@ proxy-groups:
       proxies:
       - 📣 Auto
       - 🎩 Magic
+      - ⛽ Fallback
+      - 🎉 Select
+
+    - name: 🎉 Select
+      type: select
       use:
       - 🎴 Server
       - 🛩️ Machine
@@ -67,11 +76,19 @@ proxy-groups:
 
     - name: "📣 Auto"
       type: url-test
-      url: 'http://www.gstatic.com/generate_204'
-      interval: 1
-      #tolerance: 150
-      #lazy: true
-      filter: ""
+      url: 'http://www.google.com'
+      interval: 100
+#      filter: ""
+      use:
+      - 🎴 Server
+      - 🛩️ Machine
+#Themv
+
+    - name: ⛽ Fallback
+      type: fallback
+      url: 'http://www.google.com'
+      interval: 100
+#      filter: ""
       use:
       - 🎴 Server
       - 🛩️ Machine
@@ -80,11 +97,11 @@ proxy-groups:
     - name: 🎩 Magic
       type: load-balance
       strategy: consistent-hashing
-      url: 'http://www.gstatic.com/generate_204'
-      interval: 1
+      url: 'http://www.google.com'
+      interval: 100
       #tolerance: 150
       #lazy: true
-      filter: ""
+#      filter: ""
       use:
       - 🎴 Server
       - 🛩️ Machine
@@ -103,8 +120,9 @@ proxy-providers:
         path: ./run/Vip.yaml
         health-check:
             enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 600
+            url: http://www.google.com
+            interval: 150
+            lazy: true
 
     🛩️ Machine:
         type: http
@@ -113,6 +131,6 @@ proxy-providers:
         interval: 3600
         health-check:
             enable: true
-            url: http://www.gstatic.com/generate_204
-            interval: 600
-
+            url: http://www.google.com
+            interval: 150
+            lazy: true
