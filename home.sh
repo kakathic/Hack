@@ -68,7 +68,7 @@ echo "
         interval: 3600
         health-check:
             enable: true
-            url: http://www.gstatic.com/generate_204
+            url: http://www.google.com
             interval: 150
             lazy: true
 ##€Tensv
@@ -83,7 +83,7 @@ echo "
         path: ./run/€KKFi
         health-check:
             enable: true
-            url: http://www.gstatic.com/generate_204
+            url: http://www.google.com
             interval: 150
             lazy: true
 ##€Tensv
