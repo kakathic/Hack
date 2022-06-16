@@ -53,7 +53,7 @@ rules:
   - DOMAIN-SUFFIX,google.com,⛩️ Total
   - DOMAIN-KEYWORD,google,⛩️ Total
   - DOMAIN,google.com,⛩️ Total
-  - RULE-SET,Anti-ad,GLOBAL
+  - RULE-SET,Anti-ad,REJECT
   - MATCH,⛩️ Total
   - MATCH,📣 Auto
   - MATCH,🎩 Magic
