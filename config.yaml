@@ -50,14 +50,11 @@ dns:
   - https://cloudflare-dns.com/dns-query
 
 rules:
-  - RULE-SET,Anti-ad,GLOBAL
-  - DOMAIN-SUFFIX,google.com,⛩️ Total
-  - DOMAIN-KEYWORD,google,⛩️ Total
-  - DOMAIN,google.com,⛩️ Total
   - MATCH,⛩️ Total
   - MATCH,📣 Auto
   - MATCH,🎩 Magic
   - MATCH,⛽ Fallback
+  - MATCH,🎉 Select
 
 proxy-groups:
     - name: ⛩️ Total
