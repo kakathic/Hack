@@ -20,7 +20,6 @@ sniffer:
 profile:
   store-selected: true
   store-fake-ip: true
-  tracing: true
 
 tun:
   enable: true
@@ -51,10 +50,6 @@ dns:
 
 rules:
   - MATCH,⛩️ Total
-  - MATCH,📣 Auto
-  - MATCH,🎩 Magic
-  - MATCH,⛽ Fallback
-  - MATCH,🎉 Select
 
 proxy-groups:
     - name: ⛩️ Total
