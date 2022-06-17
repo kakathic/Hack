@@ -70,7 +70,6 @@ echo "
             enable: true
             url: http://www.google.com
             interval: 150
-            lazy: true
 ##€Tensv
 " >> "$PHOME/config.yaml"
 sed -i "s/#Themv/      - €Tensv\n#Themv/g" "$PHOME/config.yaml"
@@ -85,7 +84,6 @@ echo "
             enable: true
             url: http://www.google.com
             interval: 150
-            lazy: true
 ##€Tensv
 " >> "$PHOME/config.yaml"
 sed -i "s/#Themv/      - €Tensv\n#Themv/g" "$PHOME/config.yaml"
