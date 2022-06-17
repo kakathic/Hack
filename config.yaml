@@ -49,6 +49,7 @@ dns:
   - https://cloudflare-dns.com/dns-query
 
 rules:
+  - MATCH,⛩️ Total
   - MATCH,📣 Auto
   - MATCH,🎩 Magic
   - MATCH,⛽ Fallback
