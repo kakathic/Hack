@@ -1,6 +1,6 @@
 allow-lan: true
 ipv6: false
-mode: rule
+mode: global
 udp: true
 log-level: info
 external-controller: 127.0.0.1:9090
@@ -49,22 +49,9 @@ dns:
   - https://cloudflare-dns.com/dns-query
 
 rules:
-  - RULE-SET,Anti-ad,GLOBAL
-  - MATCH,⛩️ Total
-  - MATCH,📣 Auto
-  - MATCH,🎩 Magic
-  - MATCH,⛽ Fallback
-  - MATCH,🎉 Select
+  - MATCH,GLOBAL
 
 proxy-groups:
-    - name: ⛩️ Total
-      type: select
-      proxies:
-      - 📣 Auto
-      - 🎩 Magic
-      - ⛽ Fallback
-      - 🎉 Select
-
     - name: 🎉 Select
       type: select
       use:
@@ -72,7 +59,7 @@ proxy-groups:
       - 🛩️ Machine
 #Themv
 
-    - name: "📣 Auto"
+    - name: 📣 Auto
       type: url-test
       url: 'http://www.google.com'
       interval: 1
@@ -105,13 +92,6 @@ proxy-groups:
       - 🛩️ Machine
 #Themv
 
-rule-providers:
-    Anti-ad:
-        behavior: "domain"
-        type: http
-        url: "https://raw.githubusercontent.com/Qiu2zhi1zhe3/anti-ad/main/anti-ad.yaml"
-        path: ./run/anti-ad.yaml
-
 proxy-providers:
     🎴 Server:
         type: file
@@ -119,7 +99,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.google.com
-            interval: 150
+            interval: 1
 
     🛩️ Machine:
         type: http
@@ -129,4 +109,4 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.google.com
-            interval: 150
+            interval: 1
