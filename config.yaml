@@ -12,7 +12,7 @@ routing-mark: 6666
 
 unified-delay: true
 geodata-mode: true
-tcp-concurrent: true
+tcp-concurrent: false
 
 sniffer:
   enable: false
@@ -75,7 +75,7 @@ proxy-groups:
     - name: "📣 Auto"
       type: url-test
       url: 'http://www.google.com'
-      interval: 100
+      interval: 1
 #      filter: ""
       use:
       - 🎴 Server
@@ -85,7 +85,7 @@ proxy-groups:
     - name: ⛽ Fallback
       type: fallback
       url: 'http://www.google.com'
-      interval: 100
+      interval: 1
 #      filter: ""
       use:
       - 🎴 Server
@@ -96,7 +96,7 @@ proxy-groups:
       type: load-balance
       strategy: consistent-hashing
       url: 'http://www.google.com'
-      interval: 100
+      interval: 1
       #tolerance: 150
       #lazy: true
 #      filter: ""
