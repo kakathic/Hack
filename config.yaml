@@ -50,6 +50,7 @@ dns:
 
 rules:
   - MATCH,GLOBAL
+  - MATCH,📣 Auto
 
 proxy-groups:
     - name: 🎉 Select
