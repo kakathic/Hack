@@ -4,7 +4,7 @@ PHOME="$TOME/Module/Hack-Proxy"
 # Command
 cat << HiH | sed2
 <group>
-<page config-sh=". $PHOME/home.sh" id="$RANDOM" visible="test -e /sdcard/Tools/Vip && echo 1 || echo 0">
+<page config-sh=". $PHOME/home.sh" id="$RANDOM" locked="$(test -e /sdcard/Tools/Vip && echo 0 || echo 1)">
 <title>Hack Proxy</title>
 <desc>Giúp máy bạn có mạng, thay đổi ip proxy</desc>
 <option reload="true" auto-off="true" id="kk3" >Cập nhật config.yaml</option>
