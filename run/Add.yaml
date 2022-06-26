@@ -44,9 +44,9 @@ proxies:
     - { name: '🇻🇳 VHNG 4', type: vmess, server: 202.92.7.188, port: 80, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /sos4g.xyz, headers: { Host: sos.akamaized.net } } }
     - { name: '🇻🇳 VHNG 6', type: vmess, server: hn6.sos4g.xyz, port: 80, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /sos4g.xyz, headers: { Host: sos.akamaized.net } } }
     - { name: '🇻🇳 VHNG 8', type: vmess, server: hn8.sos4g.xyz, port: 80, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /sos4g.xyz, headers: { Host: sos.akamaized.net } } }
-    - {name: 🇻🇳 Hà Nội 🦊, server: 202.92.7.188, port: 80, type: vmess, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /sos4g.xyz, headers: {Host: sos.akamaized.net}}}
-    - {name: 🇻🇳 Hà Nội 🦝, server: hn6.sos4g.xyz, port: 80, type: vmess, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /sos4g.xyz, headers: {Host: sos.akamaized.net}}}
-    - {name: 🇻🇳 HCM Nix 2 🐻‍❄️, server: hcmn2.sos4g.xyz, port: 80, type: vmess, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /sos4g.xyz, headers: {Host: sos.akamaized.net}}}
+    - { name: '🇻🇳 Hà Nội 🦊', server: 202.92.7.188, port: 80, type: vmess, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /sos4g.xyz, headers: {Host: sos.akamaized.net}}}
+    - { name: '🇻🇳 Hà Nội 🦝', server: hn6.sos4g.xyz, port: 80, type: vmess, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /sos4g.xyz, headers: {Host: sos.akamaized.net}}}
+    - { name: '🇻🇳 HCM Nix 2 🐻‍❄️', server: hcmn2.sos4g.xyz, port: 80, type: vmess, uuid: 88feb3a4-8dd9-4001-91d6-9cceabca5a4b, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /sos4g.xyz, headers: {Host: sos.akamaized.net}}}
     - { name: "🇻🇳 KK", type: vmess, server: ngomytramy.com, uuid: f64d8c6b-8891-4511-b9cb-21e0f89f933d, port: 80, alterId: 0, cipher: auto, skip-cert-verify: true, udp: true, tls: false, network: ws, ws-opts: { path: "/", headers: { Host: v.akamaized.net } } }
 
 
