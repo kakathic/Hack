@@ -21,7 +21,7 @@ mv -f "$TEMP_DIR/Clash" $TOME/bin/Clash
 chmod 0777 $TOME/bin/Clash
 fi
 
-[ "$(top -n1 -b | grep -cm1 'Clash')" == 1 ] || rm -fr $PHOME/run/clash.pid
+[ "$(cat /proc/$(cat $PHOME/run/clash.pid)/cmdline)" ] || rm -fr $PHOME/run/clash.pid
 
 cat << HiH | sed2
 <?xml version="1.0" encoding="UTF-8" ?>
