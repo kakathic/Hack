@@ -135,7 +135,7 @@ fi
 <param name="eheheb" desc=" " label="Nhật ký" value-sh="grep -m1 log-level: $PHOME/config.yaml | cut -d : -f2" option-sh="echo silent; echo info; echo warning; echo error; echo debug;"/>
 <param name="sjdjdh" value-sh="grep -m1 filter: $PHOME/config.yaml | cut -d \&quot; -f2" type="text" desc="£Điền tên cần lọc ở sever Auto, Magic, bỏ trống để hủy lọc££Ví dụ: 🇻🇳|VN£" label="Lọc tên"/>
 <set>
-[ "€brhdh" ] && sed -i -e "s/€(grep -m1 external-ui: $PHOME/config.yaml)/  stack: €brhdh/g" "$PHOME/config.yaml"
+[ "€brhdh" ] && sed -i -e "s/€(grep -m1 external-ui: $PHOME/config.yaml)/external-ui: €brhdh/g" "$PHOME/config.yaml"
 [ "€Luachokhb" ] && sed -i -e "s/€(grep -m1 mode: $PHOME/config.yaml)/mode: €Luachokhb/g" "$PHOME/config.yaml"
 [ "€ksjdbdjdj" ] && sed -i -e "s/€(grep -m1 stack: $PHOME/config.yaml)/  stack: €ksjdbdjdj/g" "$PHOME/config.yaml"
 [ "€eheheb" ] && sed -i -e "s/€(grep -m1 log-level: $PHOME/config.yaml)/log-level: €eheheb/g" "$PHOME/config.yaml"
