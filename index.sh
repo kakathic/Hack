@@ -18,7 +18,7 @@ cat $PHOME/run/kernel.log
 elif [ "€menu_id" == "kk4" ];then
 curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 elif [ "€menu_id" == "kk3" ];then
-Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $TEMP_DIR/config.yaml
+Taive "$(Xset conda)" $TEMP_DIR/config.yaml
 if [ -e $TEMP_DIR/config.yaml ];then
 mv -f $TEMP_DIR/config.yaml $PHOME/config.yaml
 if [ -e $PHOME/run/clash.pid ];then

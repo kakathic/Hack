@@ -7,11 +7,12 @@ echo 'proxies:' > $PHOME/run/Vip.yaml
 fi
 
 if [ ! -e $PHOME/Yacd-meta-gh-pages ];then
-Taive "https://raw.githubusercontent.com/Qiu2zhi1zhe3/anti-ad/main/anti-ad.yaml" "$PHOME/run/anti-ad.yaml"
 Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
 unzip -qo "$TEMP_DIR/Testvg.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
+
+[ -e $PHOME/config.yaml ] || Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $PHOME/config.yaml
 
 if [ ! -e $TOME/bin/Clash ];then
 Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
@@ -41,6 +42,20 @@ $PHOME/scripts/service.sh
 </set>
 </switch>
 </group>
+
+
+<group>
+<action shell="hidden" reload="true">
+<title>Thêm config</title>
+<desc>nhập đường dẫn url tới config.yaml để sử dụng</desc>
+<param name="conda" value-sh="Xset conda" type="text" desc="" placeholder="Url http" required="required" />
+<set>
+Tset conda "€conda"
+Taive "€conda" $PHOME/config.yaml
+</set>
+</action>
+</group>
+
 
 <group>
 <action shell="hidden" reload="true">
@@ -151,12 +166,6 @@ curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.y
 <desc>Xem ip vị trí của bạn đang ở đâu</desc>
 </page>
 </group>
-
-
-<text/>
-<text >
-<desc>$(cat $PHOME/README.md)</desc>
-</text>
 
 </items>
 HiH
