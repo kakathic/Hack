@@ -8,7 +8,7 @@ cat << HiH | sed2
 <title>Hack Proxy</title>
 <desc>Giúp máy bạn có mạng, thay đổi ip proxy</desc>
 <option reload="true" auto-off="true" id="kk3" >Cập nhật config.yaml</option>
-<option type="default" id="kk2" reload="true" auto-off="true">Cập nhật toàn bộ</option>
+<option type="default" id="kk2" auto-off="true" auto-finish="true" >Cập nhật toàn bộ</option>
 <option type="default" id="kk" >Nhật ký</option>
 <option type="default" reload="true" auto-off="true" style="fab" icon="$TOME/usr/Tool/Loading.png" id="kk4" >$lammoi</option>
 <handler>
