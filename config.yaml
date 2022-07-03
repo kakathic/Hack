@@ -1,6 +1,6 @@
 allow-lan: true
 ipv6: true
-mode: rule
+mode: global
 udp: false
 log-level: info
 external-controller: 127.0.0.1:9090
