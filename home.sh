@@ -142,7 +142,7 @@ fi
 [ "€ksjdbdjdj" ] && sed -i -e "s/€(grep -m1 stack: $PHOME/config.yaml)/  stack: €ksjdbdjdj/g" "$PHOME/config.yaml"
 [ "€eheheb" ] && sed -i -e "s/€(grep -m1 log-level: $PHOME/config.yaml)/log-level: €eheheb/g" "$PHOME/config.yaml"
 [ "€sjdjdh" ] && sed -i -e "s/€(grep -m1 filter: $PHOME/config.yaml)/      filter: \"€sjdjdh\"/g" "$PHOME/config.yaml" || sed -i -e "s/€(grep -m1 filter: $PHOME/config.yaml)/#      filter: \"€sjdjdh\"/g" "$PHOME/config.yaml"
-
+rm -fr €TEMP_DIR/*
 curl -s -X PUT -H "Content-Type: application/json" -d '{"path": "$PHOME/config.yaml"}' http://127.0.0.1:9090/configs
 
 </set>
