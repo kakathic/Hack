@@ -6,7 +6,7 @@ mkdir -p "$PHOME/run"
 echo 'proxies:' > $PHOME/run/Vip.yaml
 fi
 
-if [ ! -e $PHOME/Yacd-meta-gh-pages ];then
+if [ ! -e $PHOME/Yacd-meta-gh-pages ] || [ ! -e $PHOME/yacd-gh-pages ];then
 Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
 Taive "https://github.com/haishanh/yacd/archive/gh-pages.zip" "$TEMP_DIR/Testvg2.zip"
 unzip -qo "$TEMP_DIR/Testvg.zip" -d "$PHOME"
