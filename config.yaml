@@ -21,6 +21,10 @@ profile:
   store-selected: true
   store-fake-ip: true
 
+auto-redir:
+  enable: true
+  auto-route: true
+
 tun:
   enable: true
   device: utun
