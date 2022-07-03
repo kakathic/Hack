@@ -14,7 +14,10 @@ unzip -qo "$TEMP_DIR/Testvg2.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
 
-[ -e $PHOME/config.yaml ] || Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $PHOME/config.yaml
+if [ ! -e $PHOME/config.yaml ];then
+Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $PHOME/config.yaml
+Tset conda "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml"
+fi
 
 if [ ! -e $TOME/bin/Clash ];then
 Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
