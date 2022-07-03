@@ -14,8 +14,7 @@ unzip -qo "$TEMP_DIR/Testvg2.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
 
-if [ ! -e $PHOME/config.yaml ];then
-Taive "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml" $PHOME/config.yaml
+if [ ! $(Xset conda) ];then
 Tset conda "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml"
 fi
 
