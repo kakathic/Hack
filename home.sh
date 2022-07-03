@@ -52,7 +52,7 @@ $PHOME/scripts/service.sh
 <action shell="hidden" reload="true">
 <title>Thêm config</title>
 <desc>nhập đường dẫn url tới config.yaml để sử dụng</desc>
-<param name="conda" value-sh="Xset conda" type="text" desc="" placeholder="Url http" required="required" />
+<param name="conda" value-sh="Xset conda" type="text" desc="" title="Url" placeholder="Url http" required="required" />
 <param name="CFfile" type="file" title="Tệp tin" editable="true" suffix="yaml"/>
 <set>
 Tset conda "€conda"
