@@ -1,6 +1,6 @@
 allow-lan: true
-ipv6: false
-mode: global
+ipv6: true
+mode: rule
 udp: false
 log-level: info
 external-controller: 127.0.0.1:9090
@@ -12,7 +12,7 @@ routing-mark: 6666
 
 unified-delay: true
 geodata-mode: false
-tcp-concurrent: true
+tcp-concurrent: false
 
 sniffer:
   enable: false
@@ -32,7 +32,7 @@ tun:
 
 dns:
   enable: true
-  ipv6: false
+  ipv6: true
   listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
@@ -49,6 +49,7 @@ dns:
 
 rules:
   - MATCH,GLOBAL
+  - MATCH,📣 Auto
 
 proxy-groups:
     - name: 🎉 Select
@@ -62,7 +63,7 @@ proxy-groups:
       type: url-test
       url: 'http://www.google.com'
       interval: 1
-#      filter: ""
+#      filter: "🇻🇳"
       use:
       - 🎴 Server
       - 🛩️ Machine
@@ -72,7 +73,7 @@ proxy-groups:
       type: fallback
       url: 'http://www.google.com'
       interval: 1
-#      filter: ""
+#      filter: "🇻🇳"
       use:
       - 🎴 Server
       - 🛩️ Machine
@@ -85,7 +86,7 @@ proxy-groups:
       interval: 1
       #tolerance: 150
       #lazy: true
-#      filter: ""
+#      filter: "🇻🇳"
       use:
       - 🎴 Server
       - 🛩️ Machine
