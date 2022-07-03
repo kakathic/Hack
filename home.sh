@@ -8,7 +8,9 @@ fi
 
 if [ ! -e $PHOME/Yacd-meta-gh-pages ];then
 Taive "https://github.com/MetaCubeX/yacd/archive/refs/heads/gh-pages.zip" "$TEMP_DIR/Testvg.zip"
+Taive "https://github.com/haishanh/yacd/archive/gh-pages.zip" "$TEMP_DIR/Testvg2.zip"
 unzip -qo "$TEMP_DIR/Testvg.zip" -d "$PHOME"
+unzip -qo "$TEMP_DIR/Testvg2.zip" -d "$PHOME"
 rm -fr "$TEMP_DIR"/*
 fi
 
@@ -125,11 +127,13 @@ fi
 
 <group>
 <action shell="hidden" reload="true" title="Tùy chọn" desc="Tổng hợp các tùy chọn nhanh" >
+<param name="brhdh" desc=" " label="Giao diện" value-sh="grep -m1 external-ui: $PHOME/config.yaml | cut -d : -f2" option-sh="echo yacd-gh-pages; echo Yacd-meta-gh-pages;"/>
 <param name="Luachokhb" desc=" " label="Chế độ" value-sh="grep -m1 mode: $PHOME/config.yaml | cut -d : -f2" option-sh="echo rule; echo global; echo direct; echo script;"/>
 <param name="ksjdbdjdj" desc=" " label="Hệ thống" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo system; echo gvisor;"/>
 <param name="eheheb" desc=" " label="Nhật ký" value-sh="grep -m1 log-level: $PHOME/config.yaml | cut -d : -f2" option-sh="echo silent; echo info; echo warning; echo error; echo debug;"/>
 <param name="sjdjdh" value-sh="grep -m1 filter: $PHOME/config.yaml | cut -d \&quot; -f2" type="text" desc="£Điền tên cần lọc ở sever Auto, Magic, bỏ trống để hủy lọc££Ví dụ: 🇻🇳|VN£" label="Lọc tên"/>
 <set>
+[ "€brhdh" ] && sed -i -e "s/€(grep -m1 external-ui: $PHOME/config.yaml)/  stack: €brhdh/g" "$PHOME/config.yaml"
 [ "€Luachokhb" ] && sed -i -e "s/€(grep -m1 mode: $PHOME/config.yaml)/mode: €Luachokhb/g" "$PHOME/config.yaml"
 [ "€ksjdbdjdj" ] && sed -i -e "s/€(grep -m1 stack: $PHOME/config.yaml)/  stack: €ksjdbdjdj/g" "$PHOME/config.yaml"
 [ "€eheheb" ] && sed -i -e "s/€(grep -m1 log-level: $PHOME/config.yaml)/log-level: €eheheb/g" "$PHOME/config.yaml"
