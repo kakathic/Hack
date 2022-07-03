@@ -13,6 +13,7 @@ routing-mark: 6666
 unified-delay: true
 geodata-mode: false
 tcp-concurrent: false
+enable-process: false
 
 sniffer:
   enable: false
@@ -29,8 +30,8 @@ tun:
   enable: true
   device: utun
   stack: system
-  dns-hijack:
-  - any:53
+#  dns-hijack:
+#  - any:53
   auto-route: true
   auto-detect-interface: true
 
