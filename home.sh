@@ -1,6 +1,7 @@
 # Path
 PHOME="$TOME/Module/Hack-Proxy"
-pp='\"'
+pp=$(grep -m1 filter: $PHOME/config.yaml | cut -d \" -f2)
+
 if [ ! -e $PHOME/run/Vip.yaml ];then
 mkdir -p "$PHOME/run"
 echo 'proxies:' > $PHOME/run/Vip.yaml
@@ -135,7 +136,7 @@ fi
 <param name="Luachokhb" desc=" " label="Chế độ" value-sh="grep -m1 mode: $PHOME/config.yaml | cut -d : -f2" option-sh="echo rule; echo global; echo direct; echo script;"/>
 <param name="ksjdbdjdj" desc=" " label="Hệ thống" value-sh="grep -m1 stack: $PHOME/config.yaml | cut -d : -f2" option-sh="echo system; echo gvisor;"/>
 <param name="eheheb" desc=" " label="Nhật ký" value-sh="grep -m1 log-level: $PHOME/config.yaml | cut -d : -f2" option-sh="echo silent; echo info; echo warning; echo error; echo debug;"/>
-<param name="sjdjdh" value-sh="grep -m1 filter: $PHOME/config.yaml | cut -d $pp -f2" type="text" desc="£Điền tên cần lọc ở sever Auto, Magic, bỏ trống để hủy lọc££Ví dụ: 🇻🇳|VN£" label="Lọc tên"/>
+<param name="sjdjdh" value="$pp" type="text" desc="£Điền tên cần lọc ở sever Auto, Magic, bỏ trống để hủy lọc££Ví dụ: 🇻🇳|VN£" label="Lọc tên"/>
 <set>
 [ "€brhdh" ] && sed -i -e "s/€(grep -m1 external-ui: $PHOME/config.yaml)/external-ui: €brhdh/g" "$PHOME/config.yaml"
 [ "€Luachokhb" ] && sed -i -e "s/€(grep -m1 mode: $PHOME/config.yaml)/mode: €Luachokhb/g" "$PHOME/config.yaml"
