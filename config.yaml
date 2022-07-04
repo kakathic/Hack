@@ -30,8 +30,8 @@ tun:
   enable: true
   device: utun
   stack: system
-#  dns-hijack:
-#  - any:53
+  dns-hijack:
+  - any:53
   auto-route: true
   auto-detect-interface: true
 
@@ -67,7 +67,7 @@ proxy-groups:
     - name: 📣 Auto
       type: url-test
       url: 'http://www.google.com'
-      interval: 1
+      interval: 11
 #      filter: "🇻🇳"
       use:
       - 🎴 Server
@@ -77,7 +77,7 @@ proxy-groups:
     - name: ⛽ Fallback
       type: fallback
       url: 'http://www.google.com'
-      interval: 1
+      interval: 11
 #      filter: "🇻🇳"
       use:
       - 🎴 Server
