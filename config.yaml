@@ -67,7 +67,7 @@ proxy-groups:
     - name: 📣 Auto
       type: url-test
       url: 'http://www.google.com'
-      interval: 11
+      interval: 100
 #      filter: "🇻🇳"
       use:
       - 🎴 Server
@@ -77,7 +77,7 @@ proxy-groups:
     - name: ⛽ Fallback
       type: fallback
       url: 'http://www.google.com'
-      interval: 11
+      interval: 100
 #      filter: "🇻🇳"
       use:
       - 🎴 Server
@@ -88,7 +88,7 @@ proxy-groups:
       type: load-balance
       strategy: consistent-hashing
       url: 'http://www.google.com'
-      interval: 1
+      interval: 100
       #tolerance: 150
       #lazy: true
 #      filter: "🇻🇳"
@@ -104,7 +104,7 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.google.com
-            interval: 1
+            interval: 100
 
     🛩️ Machine:
         type: http
@@ -114,4 +114,4 @@ proxy-providers:
         health-check:
             enable: true
             url: http://www.google.com
-            interval: 1
+            interval: 100
