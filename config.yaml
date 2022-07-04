@@ -12,8 +12,8 @@ routing-mark: 6666
 
 unified-delay: true
 geodata-mode: false
-tcp-concurrent: false
-enable-process: false
+tcp-concurrent: true
+enable-process: true
 
 sniffer:
   enable: false
