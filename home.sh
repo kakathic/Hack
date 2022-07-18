@@ -19,12 +19,13 @@ if [ ! $(Xset conda) ];then
 Tset conda "https://raw.githubusercontent.com/kakathic/Hack/Proxy/config.yaml"
 fi
 
-if [ ! -e $TOME/bin/Clash ];then
+if [ -e $PHOME/Clash ];then
 Linkhhf="$(Xem "https://github.com/MetaCubeX/Clash.Meta/releases/tag/Prerelease-Alpha" | grep -m1 'Clash.Meta-android-arm64-alpha' | cut -d \" -f2)"
 Taive "https://github.com$Linkhhf" "$TEMP_DIR/Clash.gz"
 gzip -d "$TEMP_DIR/Clash.gz"
 mv -f "$TEMP_DIR/Clash" $TOME/bin/Clash
 chmod 0777 $TOME/bin/Clash
+rm -fr $PHOME/Clash
 fi
 
 [ "$(cat /proc/$(cat $PHOME/run/clash.pid)/cmdline)" ] || rm -fr $PHOME/run/clash.pid
