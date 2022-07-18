@@ -35,7 +35,6 @@ ecgi "€loading"
 Taive "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip" "$TEMP_DIR/Test.zip"
 [ -e "$TEMP_DIR/Test.zip" ] && unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module" || Thoat "Cập nhật dữ liệu thất bại, vui lòng kiểm tra lại mạng!"
 rm -fr "$TEMP_DIR"/*
-rm -fr $TOME/bin/Clash
 rm -fr $PHOME/*gh-pages
 chmod -R 777 $PHOME
 fi
